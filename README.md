@@ -8,10 +8,4 @@ zach is here
 
 zach is here again
 
-This is for dev branch
-
-test
-
-asdf
-
-yoyoyoo finally
+Final dev check
