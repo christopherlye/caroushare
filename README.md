@@ -1,18 +1,17 @@
-Project 3: Caroushare
+**Project 3: Caroushare**
 Save money, share textbook la!
 
-Give an example
-And coding style tests
-Explain what these tests test and why
+**Description**
+<PLACEHOLDER>
 
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
+**Wire Frame**
+<INSERT PHOTO HERE>
 
-Built With
+**Built With**
+React 
 
-Authors
+**Authors**
 @Zachary, @Chris, @Shahrani
 
-Acknowledgments
-Thank you to the precious team, @Zachary, @Chris and @shahrani for making the project happen. 
+**Acknowledgments**
+Thank you to the precious team, @Zachary, @Chris and @Shahrani for making the project happen. 
