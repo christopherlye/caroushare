@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sg-seif-1-seven-men/caroushare#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "express": "^4.17.1",
     "mongoose": "^5.7.14",
     "react-router": "^5.1.2"

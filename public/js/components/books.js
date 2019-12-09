@@ -47,6 +47,35 @@ class Books extends React.Component {
 			.catch((error) => console.log(error));
 	};
 
+	//Delete Book
+	deleteBook(id, index) {
+		fetch('/books/' + id, {
+			method : 'DELETE'
+		}).then((data) => {
+			this.setState({
+				books : [...this.state.books.slice(0, index), ...this.state.books.slice(index + 1)]
+			});
+		});
+	}
+
+	//Update Book
+	updateBook(book, index) {
+		fetch('/books' + book._id, {
+			body    : JSON.stringify(book),
+			method  : 'PUT',
+			headers : {
+				// Accept         : 'application/json, text/plain, */*',
+				'Content-Type' : 'application/json'
+			}
+		})
+			.then((updatedBook) => updatedBook.json())
+			.then((jsonedBook) => {
+				fetch('/books').then((response) => response.json()).then((books) => {
+					this.setState({ books: books });
+				});
+			});
+	}
+
 	render() {
 		return (
 			<React.Fragment>
@@ -66,18 +95,19 @@ class Books extends React.Component {
 					/>
 					<input type="submit" value="Create Book!" />
 				</form>
-				{/* <ul>
-					{this.state.books.map((book) => {
-						return (
-							<ul>
-								<li>{book.title}</li>
-								<li>{book.image}</li>
-								<td onClick={() => this.deleteBook(book._id, index)}> X </td>
-								<td onClick={() => this.updateBook(book, index)}> Edit Book </td>
-							</ul>
-						);
-					})}
-				</ul> */}
+				<table>
+					<tbody>
+						{this.state.books.map((book, index) => {
+							return (
+								<tr>
+									<td>Title: {book.title}</td> <td>{book.image}</td>
+									<td onClick={() => this.deleteBook(book._id, index)}> X </td>
+									<td onClick={() => this.updateBook(book, index)}> Edit Book </td>
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
 			</React.Fragment>
 		);
 	}
