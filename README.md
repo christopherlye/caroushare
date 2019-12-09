@@ -1,13 +1,17 @@
-# caroushare
+**Project 3: Caroushare**
+Save money, share textbook la!
 
-shah is here
+**Description**
+<PLACEHOLDER>
 
-shah is here again!
+**Wire Frame**
+<INSERT PHOTO HERE>
 
-zach is here
+**Built With**
+React 
 
-zach is here again
+**Authors**
+@Zachary, @Chris, @Shahrani
 
-Final dev check
-
-tester dev branch sh
+**Acknowledgments**
+Thank you to the precious team, @Zachary, @Chris and @Shahrani for making the project happen. 
