@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 	});
 });
 
-router.post('/books', (req, res) => {
+router.post('/', (req, res) => {
 	Books.create(req.body, (err, createdBook) => {
 		res.json(createdBook); //.json() will send proper headers in response so client knows it's json coming back
 	});
