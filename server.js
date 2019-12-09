@@ -14,7 +14,12 @@ const mongoURI =
   "mongodb+srv://zacharylky:ragnarock1@cluster0-l0lis.mongodb.net/caroushare?retryWrites=true&w=majority";
 
 // Connect to Mongo
-mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>
+mongoose.connect(
+  mongoURI, 
+  { useNewUrlParser: true,
+    useUnifiedTopology : true
+  }, 
+  () =>
   console.log("MongoDB connection established:", mongoURI)
 );
 
@@ -23,9 +28,10 @@ db.on("error", err => console.log(err.message + " is Mongod not running?"));
 db.on("disconnected", () => console.log("mongo disconnected"));
 
 // Middleware
-app.use(express.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
+app.use(express.urlencoded({ extended: true })); // extended: false - does not allow nested objects in query strings
 app.use(express.json()); //use .json(), not .urlencoded()
 app.use(express.static("public"));
+
 
 // Routes
 const caroushareController = require("./controllers/caroushare.js");

@@ -1,0 +1,65 @@
+
+
+/* ///////////////////////Navigation Bar ///////////////////////////////*/
+.navbar-dark .navbar-nav .nav-link {
+	color: black;
+	text-align: right;
+	font-family: 'Aleo', serif;
+	font-size: 1.2em;
+}
+
+
+/* For the navigation brand */
+.navbar-dark .navbar-brand {
+	color: orange;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 2rem;
+}
+
+.jumbo1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/eaton.jpg);
+    background-size: cover;
+    background-position: 10% 30%;
+	opacity: 80%;
+	min-height: 300px;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
+.jumbo1words {
+    color: white
+}
+
+/* .jumbo1 {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/eaton.jpg);
+	background-position: 10% 30%;
+	background-size: cover;
+	opacity: 80%;
+	min-height: 300px;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+.wordsInJumboImage {
+	color: black;
+	font-family: 'Permanent Marker', cursive;
+}
+
+.words {
+	display: block;
+	max-width: 900px;
+	margin-top: 10px;
+	font-size: 1.3rem;
+	color: black;
+}
+
+.wiseWords {
+	background-color: rgba(19, 3, 3, 0.6);
+	font-family: 'Jomolhari', serif;
+} */
+
+/* /////////////////////////////////////////////// */
+
+main {
+    margin-top: 100px;
+}
+

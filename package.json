@@ -1,7 +1,7 @@
 {
   "name": "caroushare",
   "version": "1.0.0",
-  "description": "shah is here",
+  "description": "Caroushare",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/sg-seif-1-seven-men/caroushare#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.7.14"
+    "mongoose": "^5.7.14",
+    "react-router": "^5.1.2"
   }
 }

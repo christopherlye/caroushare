@@ -1,5 +1,5 @@
 **Project 3: Caroushare**
-Save money, share textbook la!
+Save money, share textbook la! A platform for you to trade, share, give your textbooks away. 
 
 **Description**
 <PLACEHOLDER>
