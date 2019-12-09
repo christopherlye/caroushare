@@ -1,15 +1,18 @@
-# caroushare
+Project 3: Caroushare
+Save money, share textbook la!
 
-shah is here
+Give an example
+And coding style tests
+Explain what these tests test and why
 
-shah is here again!
+Give an example
+Deployment
+Add additional notes about how to deploy this on a live system
 
-zach is here
+Built With
 
-zach is here again
+Authors
+@Zachary, @Chris, @Shahrani
 
-Final dev check
-
-test
-
-this should be blocked
+Acknowledgments
+Thank you to the precious team, @Zachary, @Chris and @shahrani for making the project happen. 
