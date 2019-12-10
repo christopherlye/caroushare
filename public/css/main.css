@@ -46,10 +46,11 @@
 	/* border-radius: 28px; */
 }
 
-* {
-	text-align: center;
-}
-
 main {
 	margin-top: 100px;
+	font-family: 'Aleo', serif;
+}
+
+.profileContainer {
+	text-align: center;
 }

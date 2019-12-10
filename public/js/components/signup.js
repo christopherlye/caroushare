@@ -6,7 +6,9 @@ class Signup extends React.Component {
 				<br />
 				<br />
 				<br />
-				<h6>Log in or sign up page</h6>
+				<div className="container">
+					<h6>Log in or sign up page</h6>
+				</div>
 
 				<div className="container card main">
 					<img src="../img/login.jpg" className="card-img-top" alt="Caroushare log in" />
