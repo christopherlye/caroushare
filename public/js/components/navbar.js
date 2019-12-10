@@ -41,10 +41,15 @@ class Navbar extends React.Component {
               </Link>
             </li>
             {/* <li className="nav-item">
-							<Link to="/users" className="nav-link">
-								Sign up
-							</Link>
-						</li> */}
+				<Link to="/users" className="nav-link">
+					Sign up
+				</Link>
+			</li> */}
+            <li className="nav-item">
+              <Link to="/profile" className="nav-link">
+                My Profile
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
