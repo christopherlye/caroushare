@@ -83,7 +83,6 @@ class Books extends React.Component {
 				<br />
 				<br />
 				<br />
-				<h6>Books Catalogue</h6>
 				<form onSubmit={this.handleSubmit}>
 					<label for="title" />
 					<input
@@ -95,7 +94,24 @@ class Books extends React.Component {
 					/>
 					<input type="submit" value="Create Book!" />
 				</form>
-				<table>
+				<br />
+				<h6>Books Catalogue</h6>
+				<br />
+				<div class="row">
+					{this.state.books.map((book, index) => {
+						return (
+							<div>
+								<a href="" />
+								<img src="{book.image}" className="img-fluid img-thumb shadow" />
+								<h6>{book.title}</h6>
+								<p>{book.author}</p>
+								<p onClick={() => this.deleteBook(book._id, index)}> X </p>
+								<p onClick={() => this.updateBook(book, index)}> Edit Book </p>
+							</div>
+						);
+					})}
+				</div>
+				{/* <table>
 					<tbody>
 						{this.state.books.map((book, index) => {
 							return (
@@ -107,7 +123,7 @@ class Books extends React.Component {
 							);
 						})}
 					</tbody>
-				</table>
+				</table> */}
 			</React.Fragment>
 		);
 	}
