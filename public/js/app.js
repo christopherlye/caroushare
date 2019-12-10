@@ -13,13 +13,16 @@ class App extends React.Component {
               <About />
             </Route>
             <Route path="/books">
-              <Collection />
+              <Books />
             </Route>
             <Route path="/login">
               <Login />
             </Route>
             <Route path="/profile">
               <Profile />
+            </Route>
+            <Route path="/newbook">
+              <Newbook />
             </Route>
           </Switch>
         </div>

@@ -3,6 +3,9 @@ class Profile extends React.Component {
     return (
       <React.Fragment>
         <Navbar />
+        <br />
+        <br />
+        <br />
         <div className="container">
           <div className="row">
             <h1 className="display-4">Profile</h1>
@@ -11,15 +14,6 @@ class Profile extends React.Component {
               <Books />
             </div>
           </div>
-        </div>
-        <div>
-          <BrowserRouter>
-            <Switch>
-              <Route path="/newbook">
-                <Newbook />
-              </Route>
-            </Switch>
-          </BrowserRouter>
         </div>
       </React.Fragment>
     );

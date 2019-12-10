@@ -38,11 +38,15 @@ class Newbook extends React.Component {
         console.log(books);
       })
       .catch(error => console.log(error));
+    //Still shows error
   };
   render() {
     return (
       <React.Fragment>
         <Navbar />
+        <br />
+        <br />
+        <br />
         <div>
           <form onSubmit={this.handleSubmit}>
             <label for="title" />

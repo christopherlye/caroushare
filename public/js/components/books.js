@@ -86,6 +86,9 @@ class Books extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Navbar />
+        <br />
+        <br />
         <h6>Books Catalogue</h6>
         <br />
         <div class="row">
