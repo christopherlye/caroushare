@@ -100,7 +100,9 @@ class Books extends React.Component {
                   src="{book.image}"
                   className="img-fluid img-thumb shadow"
                 />
-                <h6>{book.title}</h6>
+                <Link to="/showbook">
+                  <h6>{book.title}</h6>
+                </Link>
                 <p>{book.author}</p>
                 <p onClick={() => this.deleteBook(book._id, index)}> X </p>
                 <p onClick={() => this.updateBook(book, index)}> Edit Book </p>

@@ -24,6 +24,9 @@ class App extends React.Component {
             <Route path="/newbook">
               <Newbook />
             </Route>
+            <Route path="/showbook">
+              <Showbook />
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>
@@ -31,4 +34,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('.main-loader'));
+ReactDOM.render(<App />, document.querySelector(".main-loader"));
