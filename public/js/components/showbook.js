@@ -8,26 +8,28 @@ class Showbook extends React.Component {
       books: []
     };
   }
-  componentDidMount = () => {
-    fetch("/books")
-      .then(response => response.json())
-      .then(books => {
-        this.setState({ books: books });
-      });
-  };
+
+  async componentDidMount() {
+    console.log("runing");
+    let bookStore = await fetch("/books");
+
+    console.log(bookStore);
+    this.setState(state => {
+      title: bookStore.title;
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
         <Navbar />
-        <table>
-          <tbody>
-            {this.state.books.map(book => {
-              <tr>
-                <td>{book.title}</td>
-              </tr>;
-            })}
-          </tbody>
-        </table>
+        <div>
+          {this.state.books.map(book => {
+            <tr>
+              <td>{book.title}</td>
+            </tr>;
+          })}
+        </div>
 
         <br />
         <br />
