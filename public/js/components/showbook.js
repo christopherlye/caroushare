@@ -10,9 +10,9 @@ class Showbook extends React.Component {
   }
 
   async componentDidMount() {
-    console.log("runing");
+    console.log("running");
     let bookStore = await fetch("/books");
-
+    console.log(bookStore.title);
     console.log(bookStore);
     this.setState(state => {
       title: bookStore.title;
