@@ -1,4 +1,4 @@
-const { BrowserRouter, Link, Switch, Route, browserHistory } = ReactRouterDOM;
+const { Redirect, BrowserRouter, Link, Switch, Route, browserHistory } = ReactRouterDOM;
 
 class App extends React.Component {
 	constructor(props) {
@@ -30,7 +30,7 @@ class App extends React.Component {
 							<Home currentUser={this.state.currentUser} />
 						</Route>
 						<Route path="/login">
-							<Login userState={this.userState} />
+							{this.state.currentUser ? <Redirect to="/profile"/> : <Login userState={this.userState} /> }
 						</Route>
 						<Route path="/signup">
 							<Signup currentUser={this.state.currentUser} />
