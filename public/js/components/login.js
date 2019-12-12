@@ -46,13 +46,13 @@ class Login extends React.Component {
 				<br />
 				<br />
 
-				<div className="container card main">
-					<h1>Login</h1>
-
+				<div className="container card main" style={{ width: '30rem' }}>
 					<img src="../img/login.jpg" className="card-img-top" alt="Caroushare log in" />
+
 					<div className="card-body">
-						<form onSubmit={this.handleSubmit}>
-							<label htmlFor="username">Username</label>
+						<h1>Login</h1>
+						<form onSubmit={this.handleSubmit} className="">
+							<label htmlFor="username">Username </label>
 							<input
 								type="text"
 								name="username"
@@ -60,7 +60,8 @@ class Login extends React.Component {
 								value={this.state.username}
 								onChange={this.handleChange}
 							/>
-							<label htmlFor="password">Password</label>
+							<br />
+							<label htmlFor="password">Password </label>
 							<input
 								type="text"
 								name="password"
@@ -68,6 +69,7 @@ class Login extends React.Component {
 								value={this.state.password}
 								onChange={this.handleChange}
 							/>
+							<br />
 							<input type="submit" value="Submit" />
 						</form>
 					</div>

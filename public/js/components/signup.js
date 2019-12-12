@@ -45,17 +45,15 @@ class Signup extends React.Component {
 				<br />
 				<br />
 				<br />
-				<div className="container">
-					<h6>Sign up page</h6>
-				</div>
 
-				<div className="container card main">
+				<div className="container card main" style={{ width: '30rem' }}>
 					<img src="../img/login.jpg" className="card-img-top" alt="Caroushare signup" />
+
 					<div className="card-body">
-						<form onSubmit={this.handleSubmit} className="col s12 form-signin">
-							<h1 className="h3 mb-3 font-weight-normal">Sign Up</h1>
+						<h1>Sign Up</h1>
+						<form onSubmit={this.handleSubmit} className="">
 							<label for="username" className="">
-								Username:
+								Username
 							</label>
 							<input
 								// placeholder="username"
