@@ -54,3 +54,13 @@ main {
 .profileContainer {
 	text-align: center;
 }
+
+/* For profile log in, sign up image  */
+.card-img-top {
+	max-width: 600px;
+}
+
+.card {
+	display: block;
+	text-align: center;
+}

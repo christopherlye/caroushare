@@ -49,6 +49,7 @@ class Books extends React.Component {
       .catch(error => console.log(error));
   };
 
+<<<<<<< HEAD
   //Delete Book
   deleteBook(id, index) {
     fetch("/books/" + id, {
@@ -117,6 +118,66 @@ class Books extends React.Component {
           </div>
         </div>
         {/* <table>
+=======
+	// //Delete Book
+	// deleteBook(id, index) {
+	// 	fetch('/books/' + id, {
+	// 		method : 'DELETE'
+	// 	}).then((data) => {
+	// 		this.setState({
+	// 			books : [...this.state.books.slice(0, index), ...this.state.books.slice(index + 1)]
+	// 		});
+	// 	});
+	// }
+
+	// //Update Book
+	// updateBook(book, index) {
+	// 	fetch('/books' + book._id, {
+	// 		body    : JSON.stringify(book),
+	// 		method  : 'PUT',
+	// 		headers : {
+	// 			// Accept         : 'application/json, text/plain, */*',
+	// 			'Content-Type' : 'application/json'
+	// 		}
+	// 	})
+	// 		.then((updatedBook) => updatedBook.json())
+	// 		.then((jsonedBook) => {
+	// 			fetch('/books').then((response) => response.json()).then((books) => {
+	// 				this.setState({ books: books });
+	// 			});
+	// 		});
+	// }
+
+	render() {
+		return (
+			<React.Fragment>
+				{/* <Navbar /> */}
+				<br />
+				<br />
+				<div class="container">
+					<br />
+					<div class="row">
+						<h6>Books Catalogue</h6>
+					</div>
+					<div class="row">
+						{this.state.books.map((book, index) => {
+							return (
+								<div>
+									<a href="" />
+									<img src="{book.image}" className="img-fluid img-thumb shadow" />
+									<Link to="/showbook">
+										<h6>{book.title}</h6>
+									</Link>
+									<p>{book.author}</p>
+									{/* <p onClick={() => this.deleteBook(book._id, index)}> X </p>
+									<p onClick={() => this.updateBook(book, index)}> Edit Book </p> */}
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				{/* <table>
+>>>>>>> 64fff62f4bb0d9c97e554ec44caff4210a90c8aa
 					<tbody>
 						{this.state.books.map((book, index) => {
 							return (
