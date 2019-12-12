@@ -30,6 +30,9 @@ class App extends React.Component {
 		return (
 			<BrowserRouter>
 				<div>
+					{/* Might be working */}
+					<Navbar currentUser={this.state.currentUser} toLogout={this.toLogout} />
+
 					{/* Nav current user    */}
 					<Switch>
 						{/* User login and diff view  */}

@@ -41,7 +41,7 @@ class Login extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar />
+				{/* <Navbar /> */}
 				<br />
 				<br />
 				<br />
@@ -63,7 +63,7 @@ class Login extends React.Component {
 							<br />
 							<label htmlFor="password">Password </label>
 							<input
-								type="text"
+								type="password"
 								name="password"
 								id="password"
 								value={this.state.password}

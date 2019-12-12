@@ -9,7 +9,7 @@ class Home extends React.Component {
 		return (
 			<React.Fragment>
 				{/* <Navbar currentUser={this.state.currentUser} /> */}
-				<Navbar />
+				{/* <Navbar /> */}
 				<div className="jumotron jumbo1">
 					<div className="container">
 						<h1 className="display-4 jumbo1words">Fluid jumbotron</h1>

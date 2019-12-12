@@ -1,4 +1,10 @@
 class Navbar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentUser : this.props.currentUser
+		};
+	}
 	render() {
 		return (
 			<nav className="navbar navbar-expand-md navbar-dark fixed-top">
@@ -35,16 +41,31 @@ class Navbar extends React.Component {
 								Books
 							</Link>
 						</li>
-						<li className="nav-item">
-							<Link to="/login" className="nav-link">
-								Log In
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link to="/signup" className="nav-link">
-								Sign up
-							</Link>
-						</li>
+
+						{/* To toggle log in or log out button  */}
+						{this.props.currentUser ? (
+							<li className="nav-item nav-link" onClick={this.props.toLogout}>
+								Logout
+							</li>
+						) : (
+							<li className="nav-item">
+								<Link to="/login" className="nav-link">
+									Log In
+								</Link>
+							</li>
+						)}
+
+						{/* for signup */}
+						{this.props.currentUser ? (
+							''
+						) : (
+							<li className="nav-item">
+								<Link to="/signup" className="nav-link">
+									Sign Up
+								</Link>
+							</li>
+						)}
+
 						{/* <li className="nav-item">
 							<Link to="/profile" className="nav-link">
 								My Profile

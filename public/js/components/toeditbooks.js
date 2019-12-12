@@ -5,10 +5,11 @@ class BooksEdit extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title  : '',
-			author : '',
-			image  : '',
-			books  : []
+			currentUser : this.props.currentUser,
+			title       : '',
+			author      : '',
+			image       : '',
+			books       : []
 		};
 	}
 
@@ -82,7 +83,7 @@ class BooksEdit extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar />
+				{/* <Navbar /> */}
 				<br />
 				<br />
 				<div class="container">

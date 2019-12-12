@@ -2,10 +2,11 @@ class Newbook extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title  : '',
-			author : '',
-			image  : '',
-			books  : []
+			currentUser : this.props.currentUser,
+			title       : '',
+			author      : '',
+			image       : '',
+			books       : []
 		};
 	}
 
@@ -43,7 +44,7 @@ class Newbook extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar />
+				{/* <Navbar /> */}
 				<br />
 				<br />
 				<br />

@@ -41,7 +41,7 @@ class Signup extends React.Component {
 		}
 		return (
 			<React.Fragment>
-				<Navbar />
+				{/* <Navbar /> */}
 				<br />
 				<br />
 				<br />

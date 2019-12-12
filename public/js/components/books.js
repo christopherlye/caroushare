@@ -79,7 +79,7 @@ class Books extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar />
+				{/* <Navbar /> */}
 				<br />
 				<br />
 				<div class="container">

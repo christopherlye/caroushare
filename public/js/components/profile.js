@@ -3,13 +3,13 @@ class Profile extends React.Component {
 		super(props);
 		this.state = {
 			username    : '',
-			currentUser : ''
+			currentUser : this.props.currentUser
 		};
 	}
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar />
+				{/* <Navbar /> */}
 				<br />
 				<br />
 				<br />
@@ -20,7 +20,7 @@ class Profile extends React.Component {
 					{/* Display Container Area */}
 					<div class="container-fluid card main ">
 						<div class="card-body">
-							<h1>Hi {this.username}!</h1>
+							<h1>Hi {this.props.currentUser}!</h1>
 							<p>What would you like to do today?</p>
 							<div class="buttonContainer">
 								<Link to="/newbook" className="btn btn-secondary btn-lg btn-custom">
