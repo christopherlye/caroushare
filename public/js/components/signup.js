@@ -3,7 +3,8 @@ class Signup extends React.Component {
 		super(props);
 		this.state = {
 			username : '',
-			password : ''
+			password : '',
+			redirect : false
 		};
 	}
 
@@ -25,10 +26,19 @@ class Signup extends React.Component {
 			.then((createdUser) => {
 				return createdUser.json();
 			})
+			.then(() => {
+				// to toggle to true to redirect
+				this.setState({
+					redirect : true
+				});
+			})
 			.catch((error) => console.log(error));
 	};
 
 	render() {
+		if (this.state.redirect === true) {
+			return <Redirect to="/login" />;
+		}
 		return (
 			<React.Fragment>
 				<Navbar />
