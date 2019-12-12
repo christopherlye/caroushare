@@ -1,14 +1,13 @@
 class Home extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			currentUser : this.props.currentUser
-		};
-	}
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {
+	// 		currentUser : this.props.currentUser
+	// 	};
+	// }
 	render() {
 		return (
 			<React.Fragment>
-				{/* <Navbar currentUser={this.state.currentUser} /> */}
 				{/* <Navbar /> */}
 				<div className="jumotron jumbo1">
 					<div className="container">

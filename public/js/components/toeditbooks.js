@@ -5,11 +5,11 @@ class BooksEdit extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentUser : this.props.currentUser,
-			title       : '',
-			author      : '',
-			image       : '',
-			books       : []
+			// currentUser : this.props.currentUser,
+			title  : '',
+			author : '',
+			image  : '',
+			books  : []
 		};
 	}
 
