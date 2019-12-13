@@ -1,75 +1,88 @@
-const { Redirect, BrowserRouter, Link, Switch, Route, browserHistory } = ReactRouterDOM;
+const {
+  Redirect,
+  BrowserRouter,
+  Link,
+  Switch,
+  Route,
+  browserHistory
+} = ReactRouterDOM;
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			currentUser : ''
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: ""
+    };
+  }
 
-	userState = (user) => {
-		this.setState(
-			{
-				currentUser : user
-			},
-			() => {
-				console.log('user logged in');
-			}
-		);
-	};
+  userState = user => {
+    this.setState(
+      {
+        currentUser: user
+      },
+      () => {
+        console.log("user logged in");
+      }
+    );
+  };
 
-	// Function to logout
-	toLogout = () => {
-		this.setState({
-			currentUser : ''
-		});
-	};
+  // Function to logout
+  toLogout = () => {
+    this.setState({
+      currentUser: ""
+    });
+  };
 
-	render() {
-		return (
-			<BrowserRouter>
-				<div>
-					{/* Might be working */}
-					<Navbar currentUser={this.state.currentUser} toLogout={this.toLogout} />
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          {/* Might be working */}
+          <Navbar
+            currentUser={this.state.currentUser}
+            toLogout={this.toLogout}
+          />
 
-					{/* Nav current user    */}
-					<Switch>
-						{/* User login and diff view  */}
-						<Route exact path="/">
-							<Home currentUser={this.state.currentUser} />
-						</Route>
-						<Route path="/login">
-							{this.state.currentUser ? <Redirect to="/profile" /> : <Login userState={this.userState} />}
-						</Route>
-						<Route path="/signup">
-							<Signup currentUser={this.state.currentUser} />
-						</Route>
+          {/* Nav current user    */}
+          <Switch>
+            {/* User login and diff view  */}
+            <Route exact path="/">
+              <Home currentUser={this.state.currentUser} />
+            </Route>
+            <Route path="/login">
+              {this.state.currentUser ? (
+                <Redirect to="/profile" />
+              ) : (
+                <Login userState={this.userState} />
+              )}
+            </Route>
+            <Route path="/signup">
+              <Signup currentUser={this.state.currentUser} />
+            </Route>
 
-						{/* Others */}
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route path="/books">
-							<Books />
-						</Route>
-						<Route path="/profile">
-							<Profile />
-						</Route>
-						<Route path="/newbook">
-							<Newbook />
-						</Route>
-						<Route path="/showbook">
-							<Showbook />
-						</Route>
-						<Route path="/toeditbooks">
-							<BooksEdit />
-						</Route>
-					</Switch>
-				</div>
-			</BrowserRouter>
-		);
-	}
+            {/* Others */}
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/books">
+              <Books />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
+            <Route path="/newbook">
+              <Newbook />
+            </Route>
+            <Route path="/showbook" component={Showbook} />
+
+            <Route path="/toeditbooks">
+              <BooksEdit />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
-ReactDOM.render(<App />, document.querySelector('.main-loader'));
+ReactDOM.render(<App />, document.querySelector(".main-loader"));
