@@ -128,18 +128,7 @@ class Books extends React.Component {
                 <tr>
                   <td>Title: {book.title}</td>
                   <td>{book.user ? book.user.username : "no user"}</td>
-                  <td>{book.image}</td>
                   <td onClick={() => this.deleteBook(book._id, index)}> X </td>
-                  <Link
-                    to={{
-                      pathname: "/toeditbooks",
-                      state: {
-                        book: book
-                      }
-                    }}
-                  >
-                    <td>Edit {book.title}</td>
-                  </Link>
                 </tr>
               );
             })}

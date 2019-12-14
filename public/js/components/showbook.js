@@ -19,6 +19,7 @@ class Showbook extends React.Component {
   // };
 
   render() {
+    console.log(this.state.book);
     return (
       <React.Fragment>
         {/* <Navbar /> */}
@@ -28,6 +29,18 @@ class Showbook extends React.Component {
         <div class="container">
           <p>{this.state.book.title}</p>
           <p>{this.state.book.author}</p>
+          <img src={this.state.book.image}></img>
+          <p>Owner: {this.state.book.user.username}</p>
+          <Link
+            to={{
+              pathname: "/toeditbooks",
+              state: {
+                book: this.state.book
+              }
+            }}
+          >
+            <p>Edit this book: {this.state.book.title}</p>
+          </Link>
         </div>
       </React.Fragment>
     );
