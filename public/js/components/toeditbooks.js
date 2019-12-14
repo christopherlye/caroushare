@@ -54,9 +54,13 @@ class BooksEdit extends React.Component {
   };
 
   //Update Book
-  updateBook(book, index) {
-    fetch("/books" + book._id, {
-      body: JSON.stringify(book),
+  updateBook = event => {
+    fetch("/books/" + this.props.location.state.book._id, {
+      body: JSON.stringify({
+        title: this.state.title,
+        author: this.state.author,
+        image: this.state.image
+      }),
       method: "PUT",
       headers: {
         // Accept         : 'application/json, text/plain, */*',
@@ -71,9 +75,13 @@ class BooksEdit extends React.Component {
             this.setState({ books: books });
           });
       });
-  }
+    // event.preventDefault();
+    // console.log(event.target);
+  };
 
   render() {
+    console.log(this.props.location.state.book._id);
+    console.log(this.state);
     return (
       <React.Fragment>
         {/* <Navbar /> */}
@@ -83,7 +91,7 @@ class BooksEdit extends React.Component {
           <br />
           <h1>To edit book</h1>
           <div class="row">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.updateBook}>
               <label for="title" />
               <input
                 type="text"

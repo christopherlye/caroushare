@@ -27,6 +27,7 @@ router.delete("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
+  console.log(req.body);
   Books.findByIdAndUpdate(
     req.params.id,
     req.body,
