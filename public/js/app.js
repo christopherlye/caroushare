@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: ""
+      currentUser: "",
+      delete: false
     };
   }
 
@@ -30,6 +31,12 @@ class App extends React.Component {
   toLogout = () => {
     this.setState({
       currentUser: ""
+    });
+  };
+
+  toDelete = () => {
+    this.setState({
+      delete: true
     });
   };
 
