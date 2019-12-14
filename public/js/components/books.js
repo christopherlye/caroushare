@@ -123,9 +123,12 @@ class Books extends React.Component {
         <table>
           <tbody>
             {this.state.books.map((book, index) => {
+              console.log(book);
               return (
                 <tr>
-                  <td>Title: {book.title}</td> <td>{book.image}</td>
+                  <td>Title: {book.title}</td>
+                  <td>{book.user ? book.user.username : "no user"}</td>
+                  <td>{book.image}</td>
                   <td onClick={() => this.deleteBook(book._id, index)}> X </td>
                   <Link
                     to={{
