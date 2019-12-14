@@ -17,4 +17,11 @@ users.post('/', (req, res) => {
 	);
 });
 
+// Show books
+users.get('/', (req, res) => {
+	User.find({}).populate('books').exec((err, foundUser) => {
+		res.json(foundUser);
+	});
+});
+
 module.exports = users;
