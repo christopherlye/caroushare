@@ -74,10 +74,7 @@ class App extends React.Component {
               <Newbook />
             </Route>
             <Route path="/showbook" component={Showbook} />
-
-            <Route path="/toeditbooks">
-              <BooksEdit />
-            </Route>
+            <Route path="/toeditbooks" component={BooksEdit} />
           </Switch>
         </div>
       </BrowserRouter>
