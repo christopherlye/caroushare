@@ -93,15 +93,15 @@ class Profile extends React.Component {
 					{/* Display Container Area */}
 					<div class="container-fluid card main ">
 						<div class="card-body">
-							<h1>Hi!</h1>
+							<h1>Hi {this.props.currentUser.username}!</h1>
 							<p>What would you like to do today?</p>
 
 							{/* Show all only my books */}
 							<div className="row">
 								{this.state.books.map((book) => {
 									console.log(book);
-									console.log(this.props.currentUser);
-									console.log(book.user._id);
+									console.log('2:', this.props.currentUser);
+									console.log('1:', book.user._id);
 
 									return this.props.currentUser._id === book.user._id ? (
 										<p>
