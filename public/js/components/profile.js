@@ -100,13 +100,12 @@ class Profile extends React.Component {
 							<div className="row">
 								{this.state.books.map((book) => {
 									console.log(book);
-									console.log(this.currentUser);
-									console.log(book.user);
+									console.log(this.props.currentUser);
+									console.log(book.user._id);
 
-									return this.currentUser._id === book.user._id ? (
+									return this.props.currentUser._id === book.user._id ? (
 										<p>
-											{/* {book.title} {book.author} */}
-											Hello
+											{book.title} {book.author}
 										</p>
 									) : (
 										''
