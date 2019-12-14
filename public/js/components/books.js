@@ -106,15 +106,13 @@ class Books extends React.Component {
                     to={{
                       pathname: "/showbook",
                       state: {
-                        book: book
+                        book: book,
+                        index: index
                       }
                     }}
                   >
                     <h6>{book.title}</h6>
                   </Link>
-                  <p>{book.author}</p>
-                  {/* <p onClick={() => this.deleteBook(book._id, index)}> X </p>
-                  <Link to="/toeditbooks"> Edit Book </Link> */}
                 </div>
               );
             })}
@@ -123,12 +121,10 @@ class Books extends React.Component {
         <table>
           <tbody>
             {this.state.books.map((book, index) => {
-              console.log(book);
               return (
                 <tr>
                   <td>Title: {book.title}</td>
                   <td>{book.user ? book.user.username : "no user"}</td>
-                  <td onClick={() => this.deleteBook(book._id, index)}> X </td>
                 </tr>
               );
             })}
