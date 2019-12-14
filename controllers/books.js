@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   Books.findByIdAndRemove(req.params.id, (err, deletedBook) => {
-    res.json(deletedBook);
+    res.redirect(303, "/");
   });
 });
 

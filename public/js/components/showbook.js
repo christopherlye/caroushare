@@ -3,7 +3,8 @@ class Showbook extends React.Component {
     super(props);
     this.state = {
       book: this.props.location.state.book,
-      index: this.props.location.state.index
+      index: this.props.location.state.index,
+      isDeleted: false
     };
   }
 
@@ -11,15 +12,13 @@ class Showbook extends React.Component {
   deleteBook(id, index) {
     fetch("/books/" + id, {
       method: "DELETE"
-    }).then(response =>
-      response.json().then(json => {
-        return json;
-      })
-    );
+    }).then(() => {
+      this.props.history.push("/books");
+    });
   }
 
   render() {
-    console.log(this.state.index);
+    console.log(this.props);
     return (
       <React.Fragment>
         {/* <Navbar /> */}
