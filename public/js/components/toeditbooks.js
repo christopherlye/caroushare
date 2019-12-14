@@ -53,24 +53,14 @@ class BooksEdit extends React.Component {
       .catch(error => console.log(error));
   };
 
-  //Delete Book
-  deleteBook(id, index) {
-    fetch("/books/" + id, {
-      method: "DELETE"
-    }).then(data => {
-      this.setState({
-        books: [
-          ...this.state.books.slice(0, index),
-          ...this.state.books.slice(index + 1)
-        ]
-      });
-    });
-  }
-
   //Update Book
-  updateBook(book, index) {
-    fetch("/books" + book._id, {
-      body: JSON.stringify(book),
+  updateBook = event => {
+    fetch("/books/" + this.props.location.state.book._id, {
+      body: JSON.stringify({
+        title: this.state.title,
+        author: this.state.author,
+        image: this.state.image
+      }),
       method: "PUT",
       headers: {
         // Accept         : 'application/json, text/plain, */*',
@@ -85,9 +75,13 @@ class BooksEdit extends React.Component {
             this.setState({ books: books });
           });
       });
-  }
+    // event.preventDefault();
+    // console.log(event.target);
+  };
 
   render() {
+    console.log(this.props.location.state.book._id);
+    console.log(this.state);
     return (
       <React.Fragment>
         {/* <Navbar /> */}
@@ -95,45 +89,41 @@ class BooksEdit extends React.Component {
         <br />
         <div class="container">
           <br />
+          <h1>To edit book</h1>
           <div class="row">
-            <h6>To edit book</h6>
+            <form onSubmit={this.updateBook}>
+              <label for="title" />
+              <input
+                type="text"
+                placeholder="Title"
+                value={this.state.title}
+                onChange={this.handleChange}
+                id="title"
+              />
+              <br />
+              <label for="author" />
+              <input
+                type="text"
+                placeholder="Author"
+                value={this.state.author}
+                onChange={this.handleChange}
+                id="author"
+              />
+              <br />
+              <label for="image" />
+              <input
+                type="text"
+                placeholder="Image URL"
+                value={this.state.url}
+                onChange={this.handleChange}
+                id="image"
+              />
+              <br />
+              <input type="submit" value="Edit Book!" />
+            </form>
           </div>
-          <div class="row">
-            {this.state.books.map((book, index) => {
-              return (
-                <div>
-                  <a href="" />
-                  <img
-                    src="{book.image}"
-                    className="img-fluid img-thumb shadow"
-                  />
-                  <Link to="/showbook">
-                    <h6>{book.title}</h6>
-                  </Link>
-                  <p>{book.author}</p>
-                  <p onClick={() => this.deleteBook(book._id, index)}> X </p>
-                  <p onClick={() => this.updateBook(book, index)}>
-                    {" "}
-                    Edit Book{" "}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+          <div class="row"></div>
         </div>
-        {/* <table>
-					<tbody>
-						{this.state.books.map((book, index) => {
-							return (
-								<tr>
-									<td>Title: {book.title}</td> <td>{book.image}</td>
-									<td onClick={() => this.deleteBook(book._id, index)}> X </td>
-									<td onClick={() => this.updateBook(book, index)}> Edit Book </td>
-								</tr>
-							);
-						})}
-					</tbody>
-				</table> */}
       </React.Fragment>
     );
   }

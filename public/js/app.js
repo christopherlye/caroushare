@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: ""
+      currentUser: "",
+      delete: false
     };
   }
 
@@ -30,6 +31,12 @@ class App extends React.Component {
   toLogout = () => {
     this.setState({
       currentUser: ""
+    });
+  };
+
+  toDelete = () => {
+    this.setState({
+      delete: true
     });
   };
 
@@ -74,10 +81,7 @@ class App extends React.Component {
               <Newbook />
             </Route>
             <Route path="/showbook" component={Showbook} />
-
-            <Route path="/toeditbooks">
-              <BooksEdit />
-            </Route>
+            <Route path="/toeditbooks" component={BooksEdit} />
           </Switch>
         </div>
       </BrowserRouter>

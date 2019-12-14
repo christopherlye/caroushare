@@ -3,9 +3,11 @@ const router = express.Router();
 const Books = require("../models/books.js");
 
 router.get("/", (req, res) => {
-  Books.find({}, (err, foundBooks) => {
-    res.json(foundBooks);
-  });
+  Books.find({})
+    .populate("user")
+    .exec((err, foundBooks) => {
+      res.json(foundBooks);
+    });
 });
 
 router.get("/:id", (req, res) => {
@@ -27,6 +29,7 @@ router.delete("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
+  console.log(req.body);
   Books.findByIdAndUpdate(
     req.params.id,
     req.body,
