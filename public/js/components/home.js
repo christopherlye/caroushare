@@ -11,10 +11,14 @@ class Home extends React.Component {
 				{/* <Navbar /> */}
 				<div className="jumotron jumbo1">
 					<div className="container">
-						<h1 className="display-4 jumbo1words">Fluid jumbotron</h1>
+						<h1 className="display-4 jumbo1words">
+							Priceless education,<br />Expensive textbooks
+						</h1>
 						<div class="container">
-							<p className="words">Education is priceless, but textbooks are expensive</p>
-							<p className="words">To do: Stretch this out to the sides, and cover the navbar</p>
+							<p className="words">
+								Education is priceless but textbooks are expensive, so why not share / trade / swap your
+								old textbooks with someone who needs it!
+							</p>
 						</div>
 					</div>
 				</div>

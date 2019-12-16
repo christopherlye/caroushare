@@ -79,7 +79,7 @@ class Books extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar />
+				{/* <Navbar /> */}
 				<br />
 				<br />
 				<div class="container">
@@ -90,8 +90,8 @@ class Books extends React.Component {
 					<div class="row">
 						{this.state.books.map((book, index) => {
 							return (
-								<div>
-									<img src="{book.image}" className="img-fluid img-thumb shadow" />
+								<div className="col listingCard col-sm-3">
+									{console.log(book.image)}
 									<Link
 										to={{
 											pathname : '/showbook',
@@ -101,14 +101,17 @@ class Books extends React.Component {
 											}
 										}}
 									>
-										<h6>{book.title}</h6>
+										<img src={book.image} className="img-fluid img-thumb shadow" />
 									</Link>
+
+									<h6>{book.title}</h6>
+									<p>Listed by: {book.user ? book.user.username : 'no user'}</p>
 								</div>
 							);
 						})}
 					</div>
 				</div>
-				<table>
+				{/* <table>
 					<tbody>
 						{this.state.books.map((book, index) => {
 							return (
@@ -119,7 +122,7 @@ class Books extends React.Component {
 							);
 						})}
 					</tbody>
-				</table>
+				</table> */}
 			</React.Fragment>
 		);
 	}

@@ -10,7 +10,6 @@ class Profile extends React.Component {
 			books       : []
 		};
 	}
-	//Component did mount etc
 	//Component did mount
 	componentDidMount = () => {
 		fetch('/books').then((response) => response.json()).then((books) => {
@@ -93,87 +92,58 @@ class Profile extends React.Component {
 					{/* Display Container Area */}
 					<div class="container-fluid card main ">
 						<div class="card-body">
-							<h1>Hi!</h1>
-							<p>What would you like to do today?</p>
+							{console.log('user:', this.state.currentUser.username)}
 
+							<h1>Hi {this.state.currentUser.username}!</h1>
+
+							<h4>What would you like to do today?</h4>
+							<p>These are your current listings:</p>
 							{/* Show all only my books */}
-							<div className="row">
-								{this.state.books.map((book) => {
-									console.log(book);
-									console.log(this.currentUser);
-									console.log(book.user);
-
-									return this.currentUser._id === book.user._id ? (
-										<p>
-											{/* {book.title} {book.author} */}
-											Hello
-										</p>
+							<div class="row">
+								{this.state.books.map((book, index) => {
+									return this.state.currentUser._id === book.user._id ? (
+										<div>
+											<img src="{book.image}" className="img-fluid img-thumb shadow" />
+											<Link
+												to={{
+													pathname : '/showbook',
+													state    : {
+														book : book
+													}
+												}}
+											>
+												<h6>{book.title}</h6>
+											</Link>
+											<p>{book.author}</p>
+											<Link to="/toeditbooks">Edit Listing</Link>
+											<p onClick={() => this.deleteBook(book._id, index)}>Delete Listing</p>
+										</div>
 									) : (
 										''
 									);
 								})}
 							</div>
-						</div>
 
-						<div class="row">
-							{this.state.books.map((book, index) => {
-								return (
-									<div>
-										<img src="{book.image}" className="img-fluid img-thumb shadow" />
-										<Link
-											to={{
-												pathname : '/showbook',
-												state    : {
-													book : book
-												}
-											}}
-										>
-											<h6>{book.title}</h6>
-										</Link>
-										<p>{book.author}</p>
-										{/* <p onClick={() => this.deleteBook(book._id, index)}> X </p>
-                  <Link to="/toeditbooks"> Edit Book </Link> */}
-									</div>
-								);
-							})}
-						</div>
+							<div class="buttonContainer">
+								<Link to="/newbook" className="btn btn-secondary btn-lg btn-custom">
+									Add new books
+								</Link>
+								<br />
 
-						<div class="buttonContainer">
-							<Link to="/newbook" className="btn btn-secondary btn-lg btn-custom">
-								Add new books
-							</Link>
-							<Link to="/toeditbooks" className="btn btn-secondary btn-lg btn-custom">
-								Edit your books!
-							</Link>
-							{/* <a
-									href="/products/"
-									class="btn btn-secondary btn-lg btn-custom"
-									role="button"
-									aria-pressed="true"
+								{/* <Link
+									to="/"
+									className="btn btn-secondary btn-lg btn-custom"
+									onClick={this.props.toLogout}
 								>
-									Edit Products
-								</a> */}
+									Log Out
+								</Link> */}
+								{/* <button className="nav-item nav-link" onClick={this.props.toLogout}>
+									<Link to="/">Logout</Link>
+								</button> */}
+							</div>
 						</div>
-						<h1>Log Out Not working yet</h1>
-						<form action="/sessions?_method=DELETE" method="POST">
-							<input type="submit" value="Log out" className="btn btn-secondary btn-lg " />
-						</form>
 					</div>
 				</div>
-
-				{/* <Navbar />
-				<br />
-				<br />
-				<br />
-				<div className="container profileContainer">
-					<div className="row">
-						<h1>My Profile</h1>
-					</div>
-					<div className="row">
-						<Link to="/newbook">Add new books</Link>
-					</div>
-					<Books />
-				</div> */}
 			</React.Fragment>
 		);
 	}

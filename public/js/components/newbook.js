@@ -77,9 +77,21 @@ class Newbook extends React.Component {
 							id="image"
 						/>
 						<br />
+						<label for="user" />
+						<input
+							type="text"
+							placeholder="username"
+							value={this.state.user}
+							onChange={this.handleChange}
+							id="user"
+						/>
+						<br />
 						<input type="submit" value="Upload Book!" />
 					</form>
 					<br />
+					<div class="row">
+						<Link to="/profile">Back</Link>
+					</div>
 				</div>
 			</React.Fragment>
 		);

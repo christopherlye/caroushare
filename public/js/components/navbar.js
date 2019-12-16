@@ -8,7 +8,7 @@ class Navbar extends React.Component {
 	render() {
 		return (
 			<nav className="navbar navbar-expand-md navbar-dark fixed-top">
-				<a className="navbar-brand" href="#">
+				<a className="navbar-brand" href="/">
 					Caroushare
 				</a>
 				<button
@@ -45,7 +45,7 @@ class Navbar extends React.Component {
 						{/* To toggle log in or log out button  */}
 						{this.props.currentUser ? (
 							<li className="nav-item nav-link" onClick={this.props.toLogout}>
-								Logout
+								<Link to="/">Logout</Link>
 							</li>
 						) : (
 							<li className="nav-item">
