@@ -27,9 +27,13 @@ class BooksEdit extends React.Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(this.state);
+		// console.log(this.state);
 		fetch('/books', {
-			body    : JSON.stringify({ title: this.state.title }),
+			body    : JSON.stringify({
+				title : this.state.title
+				// author : this.state.author,
+				// image  : this.state.image
+			}),
 			method  : 'POST',
 			headers : {
 				Accept         : 'application/json, text/plain, */*',
@@ -43,15 +47,17 @@ class BooksEdit extends React.Component {
 				// reset the form
 				// add book to list
 				this.setState({
-					title  : '',
-					image  : '',
-					author : '',
-					books  : [jsonedBook, ...this.state.books]
+					title : '',
+					// image  : '',
+					// author : '',
+					books : [jsonedBook, ...this.state.books]
 				});
 				console.log(books);
 			})
 			.catch((error) => console.log(error));
 	};
+
+	// this.props.location.state.book._id,
 
 	//Update Book
 	updateBook = (event) => {
@@ -78,8 +84,11 @@ class BooksEdit extends React.Component {
 	};
 
 	render() {
-		// console.log(this.props.location.state.book._id);
-		// console.log(this.state);
+		console.log('check props', this.props);
+		console.log('check state', this.state);
+		// console.log('222', this.props.location.state.book._id);
+		console.log('check state title', this.state.title);
+
 		return (
 			<React.Fragment>
 				{/* <Navbar /> */}
@@ -90,29 +99,30 @@ class BooksEdit extends React.Component {
 					<h1>Edit book listing</h1>
 					<div class="row">
 						<form onSubmit={this.updateBook}>
-							<label for="title" />
+							<label for="title">Title</label>
+
 							<input
 								type="text"
-								placeholder={this.state.title}
+								// placeholder={this.state.title}
 								value={this.state.title}
 								onChange={this.handleChange}
 								id="title"
 							/>
 							<br />
-							<label for="author" />
+							<label for="author">Author</label>
 							<input
 								type="text"
-								placeholder={this.state.author}
+								// placeholder={this.state.author}
 								value={this.state.author}
 								onChange={this.handleChange}
 								id="author"
 							/>
 							<br />
-							<label for="image" />
+							<label for="image">Image URL</label>
 							<input
 								type="text"
-								placeholder={this.state.url}
-								value={this.state.url}
+								// placeholder={this.state.image}
+								value={this.state.image}
 								onChange={this.handleChange}
 								id="image"
 							/>

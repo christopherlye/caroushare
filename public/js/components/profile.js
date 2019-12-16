@@ -107,7 +107,7 @@ class Profile extends React.Component {
 							<div class="row">
 								{this.state.books.map((book, index) => {
 									return this.state.currentUser._id === book.user._id ? (
-										<div className="col-4">
+										<div className="col-sm-3 listingCard">
 											{/* {console.log(book)} */}
 											<Link
 												to={{
@@ -129,22 +129,18 @@ class Profile extends React.Component {
 									);
 								})}
 							</div>
-							<div class="buttonContainer">
-								<Link to="/newbook" className="btn btn-secondary btn-lg btn-custom">
-									Add new books
-								</Link>
-
-								{/* <Link
+							{/* <div class="buttonContainer">
+								<Link
 									to="/"
 									className="btn btn-secondary btn-lg btn-custom"
 									onClick={this.props.toLogout}
 								>
 									Log Out
-								</Link> */}
-								{/* <button className="nav-item nav-link" onClick={this.props.toLogout}>
+								</Link>
+								<button className="nav-item nav-link" onClick={this.props.toLogout}>
 									<Link to="/">Logout</Link>
-								</button> */}
-							</div>
+								</button>
+							</div> */}
 						</div>
 					</div>
 				</div>
