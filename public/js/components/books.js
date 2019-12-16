@@ -82,16 +82,16 @@ class Books extends React.Component {
 				{/* <Navbar /> */}
 				<br />
 				<br />
-				<div class="container">
+				<div className="container">
 					<br />
-					<div class="row">
-						<h6>Books Catalogue</h6>
+					<div className="row">
+						<h3>Books Catalogue</h3>
+						<br />
 					</div>
 					<div class="row">
 						{this.state.books.map((book, index) => {
 							return (
 								<div className="col listingCard col-sm-3">
-									{console.log(book.image)}
 									<Link
 										to={{
 											pathname : '/showbook',

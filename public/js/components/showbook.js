@@ -34,10 +34,12 @@ class Showbook extends React.Component {
 				<br />
 				<br />
 				<div className="container showDescription">
-					<img src={this.book.image} className="showBook img-fluid img-thumb shadow" />
+					<img src={this.state.book.image} className="showBook img-fluid img-thumb shadow" />
+
 					<h5>{this.state.book.title}</h5>
 					<p>Author: {this.state.book.author}</p>
 					<p>Owner: {this.state.book.user ? this.state.book.user.username : 'No Owner'}</p>
+					<Link to="/books">Back</Link>
 					{console.log('testing for whether loggin in or not. user:', this.props.currentUser)}
 					{console.log('testing for owner of book:', this.state.book.user.username)}
 

@@ -38,7 +38,7 @@ class Profile extends React.Component {
 			})
 			.then((jsonedBook) => {
 				// reset the form
-				// add person to list
+				// add book to list
 				this.setState({
 					title : '',
 					books : [jsonedBook, ...this.state.books]
@@ -93,17 +93,22 @@ class Profile extends React.Component {
 					<div class="container-fluid card main ">
 						<div class="card-body">
 							{console.log('user:', this.state.currentUser.username)}
-
 							<h1>Hi {this.state.currentUser.username}!</h1>
 
 							<h4>What would you like to do today?</h4>
+							<Link to="/newbook" className="btn btn-secondary btn-lg btn-custom">
+								Add new books
+							</Link>
+							<br />
+							<br />
 							<p>These are your current listings:</p>
 							{/* Show all only my books */}
+
 							<div class="row">
 								{this.state.books.map((book, index) => {
 									return this.state.currentUser._id === book.user._id ? (
-										<div>
-											<img src="{book.image}" className="img-fluid img-thumb shadow" />
+										<div className="col-4">
+											{/* {console.log(book)} */}
 											<Link
 												to={{
 													pathname : '/showbook',
@@ -112,6 +117,7 @@ class Profile extends React.Component {
 													}
 												}}
 											>
+												<img src={book.image} className="img-fluid img-thumb shadow" />
 												<h6>{book.title}</h6>
 											</Link>
 											<p>{book.author}</p>
@@ -123,12 +129,10 @@ class Profile extends React.Component {
 									);
 								})}
 							</div>
-
 							<div class="buttonContainer">
 								<Link to="/newbook" className="btn btn-secondary btn-lg btn-custom">
 									Add new books
 								</Link>
-								<br />
 
 								{/* <Link
 									to="/"

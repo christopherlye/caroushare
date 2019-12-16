@@ -76,3 +76,8 @@ main {
 	text-align: center;
 	list-style: none;
 }
+
+.displayCenter {
+	margin: auto;
+	display: inline-block;
+}

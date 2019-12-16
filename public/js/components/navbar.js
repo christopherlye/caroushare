@@ -41,6 +41,16 @@ class Navbar extends React.Component {
 								Books
 							</Link>
 						</li>
+						{/* To profile button  */}
+						{this.props.currentUser ? (
+							<li className="nav-item">
+								<Link to="/profile" className="nav-link">
+									Profile
+								</Link>
+							</li>
+						) : (
+							''
+						)}
 
 						{/* To toggle log in or log out button  */}
 						{this.props.currentUser ? (
