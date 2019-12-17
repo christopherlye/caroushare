@@ -32,9 +32,9 @@ class BooksEdit extends React.Component {
     // console.log(this.state);
     fetch("/books", {
       body: JSON.stringify({
-        title: this.state.title
-        // author : this.state.author,
-        // image  : this.state.image
+        title: this.state.title,
+        author: this.state.author,
+        image: this.state.image
       }),
       method: "POST",
       headers: {
