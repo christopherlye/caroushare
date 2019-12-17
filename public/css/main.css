@@ -102,7 +102,7 @@ main {
 }
 
 .divider {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   min-height: 300px;
   text-align: center;
