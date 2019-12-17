@@ -57,7 +57,7 @@ class Showbook extends React.Component {
             this.state.book.user.username
           )}
 
-          {/* {this.state.book.user.username === this.currentUser ? ( */}
+          {/* {this.state.book.user.username === this.currentUser ? (
           <div>
             <Link
               to={{
@@ -77,7 +77,7 @@ class Showbook extends React.Component {
               X
             </p>
           </div>
-          {/* ) : (
+          ) : (
             ""
           )} */}
         </div>
