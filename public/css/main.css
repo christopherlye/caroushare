@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
 /* ///////////////////////Navigation Bar ///////////////////////////////*/
 .navbar-dark .navbar-nav .nav-link {
-  color: black;
+  color: white;
   text-align: right;
-  font-family: "Aleo", serif;
-  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  text-transform: lowercase;
+  border-bottom: 2px solid orange;
 }
 
 /* For the navigation brand */
@@ -44,17 +48,19 @@
   width: 200px;
   height: 300px;
   object-fit: cover;
+  margin-top: 50px;
   /* border-radius: 28px; */
 }
 
 .listingCard {
   /* margin-right: 10px; */
   text-align: center;
+  padding: 10px 0;
 }
 
 main {
   margin-top: 100px;
-  font-family: "Aleo", serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .profileContainer {
@@ -63,7 +69,8 @@ main {
 
 /* For profile log in, sign up image  */
 .card-img-top {
-  max-width: 600px;
+  max-width: 400px;
+  margin-top: 50px;
 }
 
 .card {
@@ -73,7 +80,8 @@ main {
 
 .showDescription {
   padding-top: 5px;
-  margin: 35px;
+  margin: 120px;
+  margin-top: 0px;
   text-align: center;
   list-style: none;
 }
@@ -94,7 +102,7 @@ main {
 }
 
 .divider {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   min-height: 300px;
   text-align: center;
@@ -104,6 +112,97 @@ main {
 .quote {
   display: inline-block;
   margin-top: 120px;
-  font-family: "Arial";
+  font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
+}
+
+html,
+body,
+.main-loader {
+  height: 100%;
+}
+
+.jumbo3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/books.jpg);
+  background-size: cover;
+  background-position: 10% 30%;
+  height: 100%;
+  min-height: 1100px;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  margin-top: 0;
+}
+
+.container-books {
+  position: absolute;
+  top: 150px;
+  left: 80px;
+}
+
+.jumbo3words {
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  position: absolute;
+  left: 40%;
+  top: 100px;
+  font-size: 1.5rem;
+}
+
+.book-title,
+.listed-by {
+  color: white;
+}
+
+.book-title {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.img-thumb {
+  box-shadow: 9px 3px 6px rgb(173, 173, 173);
+  /* border: 2px solid white; */
+}
+
+/* .login-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/books.jpg);
+  background-size: cover;
+  position: relative;
+  top: 100px;
+} */
+
+.jumbo4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/login-bgd.jpg) no-repeat;
+  background-size: cover;
+  background-position: top 50% right 90%;
+  height: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.labels {
+  display: inline-block;
+  position: relative;
+  right: 20px;
+}
+
+.jumbo5 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/books.jpg);
+  background-size: cover;
+  background-position: 10% 30%;
+  height: 100%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  margin-top: 0;
+}
+
+.jumbo5words {
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
+  position: relative;
+  top: 25px;
 }
