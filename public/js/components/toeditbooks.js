@@ -2,37 +2,39 @@
 // Currently, it's editing all the products
 
 class BooksEdit extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			// currentUser : this.props.currentUser,
-			title  : '',
-			author : '',
-			image  : '',
-			books  : []
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      // currentUser : this.props.currentUser,
+      title: "",
+      author: "",
+      image: "",
+      books: []
+    };
+  }
 
-	//Component did mount
-	componentDidMount = () => {
-		fetch('/books').then((response) => response.json()).then((books) => {
-			this.setState({ books: books });
-		});
-	};
+  //Component did mount
+  componentDidMount = () => {
+    fetch("/books")
+      .then(response => response.json())
+      .then(books => {
+        this.setState({ books: books });
+      });
+  };
 
-	//handle change and submit
-	handleChange = (event) => {
-		this.setState({ [event.target.id]: event.target.value });
-	};
+  //handle change and submit
+  handleChange = event => {
+    this.setState({ [event.target.id]: event.target.value });
+  };
 
 	handleSubmit = (event) => {
 		event.preventDefault();
 		// console.log(this.state);
 		fetch('/books', {
 			body    : JSON.stringify({
-				title : this.state.title
-				// author : this.state.author,
-				// image  : this.state.image
+				title : this.state.title,
+				author : this.state.author,
+				image  : this.state.image
 			}),
 			method  : 'POST',
 			headers : {
@@ -48,8 +50,8 @@ class BooksEdit extends React.Component {
 				// add book to list
 				this.setState({
 					title : '',
-					// image  : '',
-					// author : '',
+					image  : '',
+					author : '',
 					books : [jsonedBook, ...this.state.books]
 				});
 				console.log(books);
