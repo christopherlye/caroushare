@@ -9,7 +9,7 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         {/* <Navbar /> */}
-        <div className="jumotron jumbo1">
+        <div className="jumbo1">
           <div className="container">
             <h1 className="display-4 jumbo1words">
               Priceless education,
@@ -34,7 +34,7 @@ class Home extends React.Component {
           </p>
         </div>
 
-        <div className="jumotron jumbo2">
+        <div className="jumbo2">
           <div className="container">
             <h1 className="display-4 jumbo1words">The Caroushare Vision</h1>
             <div class="container">
