@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const session = require('express-session');
 const bodyParser = require('body-parser');
-// require('dotenv').config();
+require('dotenv').config();
 
 // Environment Variables (getting ready for Heroku)
 const PORT = process.env.PORT || 3005;

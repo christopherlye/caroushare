@@ -88,7 +88,7 @@ class Newbook extends React.Component {
 							id="image"
 						/>
 						<br />
-						<label for="user" />
+						{/* <label for="user" />
 						<input
 							type="text"
 							placeholder="username"
@@ -96,7 +96,7 @@ class Newbook extends React.Component {
 							onChange={this.handleChange}
 							id="user"
 						/>
-						<br />
+						<br /> */}
 						<input type="submit" value="Upload Book!" />
 					</form>
 					<br />

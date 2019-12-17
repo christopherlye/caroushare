@@ -103,7 +103,7 @@ class BooksEdit extends React.Component {
 
 							<input
 								type="text"
-								// placeholder={this.state.title}
+								placeholder={this.state.title}
 								value={this.state.title}
 								onChange={this.handleChange}
 								id="title"
@@ -112,7 +112,7 @@ class BooksEdit extends React.Component {
 							<label for="author">Author</label>
 							<input
 								type="text"
-								// placeholder={this.state.author}
+								placeholder={this.state.author}
 								value={this.state.author}
 								onChange={this.handleChange}
 								id="author"
@@ -121,7 +121,7 @@ class BooksEdit extends React.Component {
 							<label for="image">Image URL</label>
 							<input
 								type="text"
-								// placeholder={this.state.image}
+								placeholder={this.state.image}
 								value={this.state.image}
 								onChange={this.handleChange}
 								id="image"
