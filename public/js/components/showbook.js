@@ -4,8 +4,8 @@ class Showbook extends React.Component {
     this.state = {
       book: this.props.location.state.book,
       index: this.props.location.state.index,
-      isDeleted: false
-      // currentUser : this.props.currentUser
+      isDeleted: false,
+      currentUser: this.props.currentUser
     };
   }
 
@@ -19,11 +19,11 @@ class Showbook extends React.Component {
   // }
 
   //Delete Book
-  deleteBook(id, index) {
-    fetch("/books/" + id, {
-      method: "DELETE"
-    }).then(() => this.props.history.push("/books"));
-  }
+  // deleteBook(id, index) {
+  // 	fetch('/books/' + id, {
+  // 		method : 'DELETE'
+  // 	}).then(() => this.props.history.push('/books'));
+  // }
 
   render() {
     // console.log('testing for index', this.state.index);

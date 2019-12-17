@@ -65,25 +65,19 @@ class Navbar extends React.Component {
               </li>
             )}
 
-            {/* for signup */}
-            {this.props.currentUser ? (
-              ""
-            ) : (
-              <li className="nav-item">
-                <Link to="/signup" className="nav-link">
-                  Sign Up
-                </Link>
-              </li>
-            )}
-
-            {/* <li className="nav-item">
-							<Link to="/profile" className="nav-link">
-								My Profile
-							</Link>
-						</li> */}
-          </ul>
-        </div>
-      </nav>
-    );
-  }
+						{/* for signup */}
+						{this.props.currentUser ? (
+							''
+						) : (
+							<li className="nav-item">
+								<Link to="/signup" className="nav-link">
+									Sign Up
+								</Link>
+							</li>
+						)}
+					</ul>
+				</div>
+			</nav>
+		);
+	}
 }

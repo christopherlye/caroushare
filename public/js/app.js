@@ -1,78 +1,97 @@
-const { Redirect, BrowserRouter, Link, Switch, Route, browserHistory } = ReactRouterDOM;
+const {
+  Redirect,
+  BrowserRouter,
+  Link,
+  Switch,
+  Route,
+  browserHistory
+} = ReactRouterDOM;
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			currentUser : '',
-			delete      : false
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: "",
+      delete: false
+    };
+  }
 
-	userState = (user) => {
-		this.setState(
-			{
-				currentUser : user
-			},
-			() => {
-				console.log('user logged in');
-			}
-		);
-	};
+  userState = user => {
+    this.setState(
+      {
+        currentUser: user
+      },
+      () => {
+        console.log("user logged in");
+      }
+    );
+  };
 
-	// Function to logout
-	toLogout = () => {
-		this.setState({
-			currentUser : ''
-		});
-	};
+  // Function to logout
+  toLogout = () => {
+    this.setState({
+      currentUser: ""
+    });
+  };
 
-	toDelete = () => {
-		this.setState({
-			delete : true
-		});
-	};
+  toDelete = () => {
+    this.setState({
+      delete: true
+    });
+  };
 
-	render() {
-		return (
-			<BrowserRouter>
-				<div>
-					{/* Might be working */}
-					<Navbar currentUser={this.state.currentUser} toLogout={this.toLogout} />
+  // {/* <Route path="/showbook" component={Showbook} /> */}
 
-					{/* Nav current user    */}
-					<Switch>
-						{/* User login and diff view  */}
-						<Route exact path="/">
-							<Home currentUser={this.state.currentUser} />
-						</Route>
-						<Route path="/login">
-							{this.state.currentUser ? <Redirect to="/profile" /> : <Login userState={this.userState} />}
-						</Route>
-						<Route path="/signup">
-							<Signup currentUser={this.state.currentUser} />
-						</Route>
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          {/* Might be working */}
+          <Navbar
+            currentUser={this.state.currentUser}
+            toLogout={this.toLogout}
+          />
 
-						{/* Others */}
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route path="/books">
-							<Books />
-						</Route>
-						<Route path="/profile">
-							<Profile currentUser={this.state.currentUser} />
-						</Route>
-						<Route path="/newbook">
-							<Newbook />
-						</Route>
-						<Route path="/showbook" component={Showbook} currentUser={this.state.currentUser} />
-						<Route path="/toeditbooks" component={BooksEdit} />
-					</Switch>
-				</div>
-			</BrowserRouter>
-		);
-	}
+          {/* Nav current user    */}
+          <Switch>
+            {/* User login and diff view  */}
+            <Route exact path="/">
+              <Home currentUser={this.state.currentUser} />
+            </Route>
+            <Route path="/login">
+              {this.state.currentUser ? (
+                <Redirect to="/profile" />
+              ) : (
+                <Login userState={this.userState} />
+              )}
+            </Route>
+            <Route path="/signup">
+              <Signup currentUser={this.state.currentUser} />
+            </Route>
+
+            {/* Others */}
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/books">
+              <Books />
+            </Route>
+            <Route path="/profile">
+              <Profile currentUser={this.state.currentUser} />
+            </Route>
+            <Route path="/newbook">
+              <Newbook />
+            </Route>
+            <Route path="/showbook" component={Showbook} />
+            <Route path="/toeditbooks" component={BooksEdit} />
+            {/* <Route path="/toeditbooks">
+							<BooksEdit currentUser={this.state.currentUser} />
+						</Route> */}
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
-ReactDOM.render(<App />, document.querySelector('.main-loader'));
+ReactDOM.render(<App />, document.querySelector(".main-loader"));

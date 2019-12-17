@@ -29,9 +29,13 @@ class BooksEdit extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     fetch("/books", {
-      body: JSON.stringify({ title: this.state.title }),
+      body: JSON.stringify({
+        title: this.state.title
+        // author : this.state.author,
+        // image  : this.state.image
+      }),
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -55,7 +59,29 @@ class BooksEdit extends React.Component {
       .catch(error => console.log(error));
   };
 
+  // this.props.location.state.book._id,
+
   //Update Book
+  //   updateBook(book, index) {
+  // 	fetch("/books" + book._id, {
+  // 	  body: JSON.stringify(book),
+  // 	  method: "PUT",
+  // 	  headers: {
+  // 		// Accept         : 'application/json, text/plain, */*',
+  // 		"Content-Type": "application/json"
+  // 	  }
+  // 	})
+  // 	  .then(updatedBook => updatedBook.json())
+  // 	  .then(jsonedBook => {
+  // 		fetch("/books")
+  // 		  .then(response => response.json())
+  // 		  .then(books => {
+  // 			this.setState({ books: books });
+  // 		  });
+  // 	  });
+  //   }
+
+  //Update Book (working version)
   updateBook = event => {
     fetch("/books/" + this.props.location.state.book._id, {
       body: JSON.stringify({
@@ -77,13 +103,11 @@ class BooksEdit extends React.Component {
             this.setState({ books: books });
           });
       });
-    // event.preventDefault();
-    // console.log(event.target);
+    event.preventDefault();
+    console.log(event.target);
   };
 
   render() {
-    // console.log(this.props.location.state.book._id);
-    // console.log(this.state);
     return (
       <React.Fragment>
         {/* <Navbar /> */}
@@ -94,7 +118,8 @@ class BooksEdit extends React.Component {
           <h1>Edit book listing</h1>
           <div class="row">
             <form onSubmit={this.updateBook}>
-              <label for="title" />
+              <label for="title">Title</label>
+
               <input
                 type="text"
                 placeholder={this.state.title}
@@ -103,7 +128,7 @@ class BooksEdit extends React.Component {
                 id="title"
               />
               <br />
-              <label for="author" />
+              <label for="author">Author</label>
               <input
                 type="text"
                 placeholder={this.state.author}
@@ -112,11 +137,11 @@ class BooksEdit extends React.Component {
                 id="author"
               />
               <br />
-              <label for="image" />
+              <label for="image">Image URL</label>
               <input
                 type="text"
-                placeholder={this.state.url}
-                value={this.state.url}
+                placeholder={this.state.image}
+                value={this.state.image}
                 onChange={this.handleChange}
                 id="image"
               />

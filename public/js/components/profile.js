@@ -65,24 +65,24 @@ class Profile extends React.Component {
   }
 
   //Update Book
-  updateBook(book, index) {
-    fetch("/books" + book._id, {
-      body: JSON.stringify(book),
-      method: "PUT",
-      headers: {
-        // Accept         : 'application/json, text/plain, */*',
-        "Content-Type": "application/json"
-      }
-    })
-      .then(updatedBook => updatedBook.json())
-      .then(jsonedBook => {
-        fetch("/books")
-          .then(response => response.json())
-          .then(books => {
-            this.setState({ books: books });
-          });
-      });
-  }
+  // updateBook(book, index) {
+  //   fetch("/books" + book._id, {
+  //     body: JSON.stringify(book),
+  //     method: "PUT",
+  //     headers: {
+  //       // Accept         : 'application/json, text/plain, */*',
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //     .then(updatedBook => updatedBook.json())
+  //     .then(jsonedBook => {
+  //       fetch("/books")
+  //         .then(response => response.json())
+  //         .then(books => {
+  //           this.setState({ books: books });
+  //         });
+  //     });
+  // }
 
   ///////////////////////////////////Render
   render() {
@@ -99,7 +99,6 @@ class Profile extends React.Component {
               <div class="card-body">
                 {console.log("user:", this.state.currentUser.username)}
                 <h1>Hi {this.state.currentUser.username}!</h1>
-
                 <h4>What would you like to do today?</h4>
                 <Link
                   to="/newbook"
