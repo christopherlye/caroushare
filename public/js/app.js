@@ -33,12 +33,17 @@ class App extends React.Component {
 		});
 	};
 
-	render() {
-		return (
-			<BrowserRouter>
-				<div>
-					{/* Might be working */}
-					<Navbar currentUser={this.state.currentUser} toLogout={this.toLogout} />
+  // {/* <Route path="/showbook" component={Showbook} /> */}
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          {/* Might be working */}
+          <Navbar
+            currentUser={this.state.currentUser}
+            toLogout={this.toLogout}
+          />
 
 					{/* Nav current user    */}
 					<Switch>
@@ -68,9 +73,6 @@ class App extends React.Component {
 						</Route>
 						<Route path="/showbook" component={Showbook} />
 						<Route path="/toeditbooks" component={BooksEdit} />
-						{/* <Route path="/toeditbooks">
-							<BooksEdit currentUser={this.state.currentUser} />
-						</Route> */}
 					</Switch>
 				</div>
 			</BrowserRouter>
