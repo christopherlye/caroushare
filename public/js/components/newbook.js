@@ -2,20 +2,20 @@ class Newbook extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			// currentUser : this.props.currentUser,
 			title  : '',
 			author : '',
 			image  : '',
-			books  : []
+			books  : [],
+			users: [],
+			currentUser: this.props.currentUser
 		};
 	}
 
 	//Component did mount
 	componentDidMount = () => {
-		fetch('/books').then((response) => response.json()).then((books) => {
-			this.setState({ books: books });
-		});
+		console.log(this.props.currentUser);
 	};
+	
 
 	//handle change and submit
 	handleChange = (event) => {
@@ -30,7 +30,7 @@ class Newbook extends React.Component {
 				title  : this.state.title,
 				author : this.state.author,
 				image  : this.state.image,
-				user   : this.state.user
+				user   : this.props.currentUser._id
 			}),
 			method  : 'POST',
 			headers : {
@@ -48,7 +48,7 @@ class Newbook extends React.Component {
 					title : '',
 					books : [jsonedBook, ...this.state.books]
 				});
-				console.log(books);
+				console.log(jsonedBook);
 			})
 			.catch((error) => console.log(error));
 	};

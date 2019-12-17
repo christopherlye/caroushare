@@ -36,7 +36,9 @@ router.put("/:id", (req, res) => {
     req.body,
     { new: true },
     (err, updatedBook) => {
-      res.json(updatedBook);
+	  res.json(updatedBook);
+	//   console.log(updatedBook);
+	res.redirect(303,"/profile")
     }
   );
 });

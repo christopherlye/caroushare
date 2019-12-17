@@ -68,30 +68,26 @@ class App extends React.Component {
             <Route path="/signup">
               <Signup currentUser={this.state.currentUser} />
             </Route>
-
-            {/* Others */}
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/books">
-              <Books />
-            </Route>
-            <Route path="/profile">
-              <Profile currentUser={this.state.currentUser} />
-            </Route>
-            <Route path="/newbook">
-              <Newbook />
-            </Route>
-            <Route path="/showbook" component={Showbook} />
-            <Route path="/toeditbooks" component={BooksEdit} />
-            {/* <Route path="/toeditbooks">
-							<BooksEdit currentUser={this.state.currentUser} />
-						</Route> */}
-          </Switch>
-        </div>
-      </BrowserRouter>
-    );
-  }
+						{/* Others */}
+						<Route path="/about">
+							<About />
+						</Route>
+						<Route path="/books">
+							<Books />
+						</Route>
+						<Route path="/profile">
+							<Profile currentUser={this.state.currentUser} />
+						</Route>
+						<Route path="/newbook">
+							<Newbook currentUser={this.state.currentUser}/>
+						</Route>
+						<Route path="/showbook" component={Showbook} />
+						<Route path="/toeditbooks" component={BooksEdit} />
+					</Switch>
+				</div>
+			</BrowserRouter>
+		);
+	}
 }
 
 ReactDOM.render(<App />, document.querySelector(".main-loader"));

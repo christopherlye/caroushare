@@ -29,12 +29,12 @@ class BooksEdit extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // console.log(this.state);
+    console.log(this.state);
     fetch("/books", {
       body: JSON.stringify({
         title: this.state.title,
-        author: this.state.author,
-        image: this.state.image
+        author : this.state.author,
+        image  : this.state.image
       }),
       method: "POST",
       headers: {
