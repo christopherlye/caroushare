@@ -134,7 +134,16 @@ class Profile extends React.Component {
                         <h6>{book.title}</h6>
                       </Link>
                       <p>{book.author}</p>
-                      <Link to="/toeditbooks">Edit Listing</Link>
+                      <Link
+                        to={{
+                          pathname: "/toeditbooks",
+                          state: {
+                            book: book
+                          }
+                        }}
+                      >
+                        Edit Listing
+                      </Link>
                       <p onClick={() => this.deleteBook(book._id, index)}>
                         Delete Listing
                       </p>
