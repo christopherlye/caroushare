@@ -31,5 +31,6 @@
     "nodemon": "^2.0.2",
     "react-router": "^5.1.2"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
