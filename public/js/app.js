@@ -69,7 +69,7 @@ class App extends React.Component {
 							<Profile currentUser={this.state.currentUser} />
 						</Route>
 						<Route path="/newbook">
-							<Newbook />
+							<Newbook currentUser={this.state.currentUser}/>
 						</Route>
 						<Route path="/showbook" component={Showbook} />
 						<Route path="/toeditbooks" component={BooksEdit} />
