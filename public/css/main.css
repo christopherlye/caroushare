@@ -48,13 +48,14 @@
   width: 200px;
   height: 300px;
   object-fit: cover;
+  margin-top: 50px;
   /* border-radius: 28px; */
 }
 
 .listingCard {
   /* margin-right: 10px; */
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 main {
@@ -68,7 +69,8 @@ main {
 
 /* For profile log in, sign up image  */
 .card-img-top {
-  max-width: 600px;
+  max-width: 400px;
+  margin-top: 50px;
 }
 
 .card {
@@ -78,7 +80,8 @@ main {
 
 .showDescription {
   padding-top: 5px;
-  margin: 35px;
+  margin: 120px;
+  margin-top: 0px;
   text-align: center;
   list-style: none;
 }
@@ -134,7 +137,7 @@ body,
 .container-books {
   position: absolute;
   top: 150px;
-  left: 20px;
+  left: 80px;
 }
 
 .jumbo3words {
@@ -159,4 +162,47 @@ body,
 .img-thumb {
   box-shadow: 9px 3px 6px rgb(173, 173, 173);
   /* border: 2px solid white; */
+}
+
+/* .login-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/books.jpg);
+  background-size: cover;
+  position: relative;
+  top: 100px;
+} */
+
+.jumbo4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/login-bgd.jpg) no-repeat;
+  background-size: cover;
+  background-position: top 50% right 90%;
+  height: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.labels {
+  display: inline-block;
+  position: relative;
+  right: 20px;
+}
+
+.jumbo5 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/books.jpg);
+  background-size: cover;
+  background-position: 10% 30%;
+  height: 100%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  margin-top: 0;
+}
+
+.jumbo5words {
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
+  position: relative;
+  top: 25px;
 }

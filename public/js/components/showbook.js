@@ -30,16 +30,16 @@ class Showbook extends React.Component {
     console.log("book", this.state.book);
     return (
       <React.Fragment>
-        <div className="jumbo4">
+        <div className="jumbo5">
           <div className="container showDescription">
+            <h3 className="jumbo5words">{this.state.book.title}</h3>
             <img
               src={this.state.book.image}
-              className="showBook img-fluid img-thumb shadow"
+              className="showBook img-fluid img-thumb"
             />
-
-            <h5>{this.state.book.title}</h5>
-            <p>Author: {this.state.book.author}</p>
-            <p>
+            <h5 className="book-title">{this.state.book.title}</h5>
+            <p className="listed-by">Author: {this.state.book.author}</p>
+            <p className="listed-by">
               Owner:{" "}
               {this.state.book.user
                 ? this.state.book.user.username

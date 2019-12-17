@@ -89,79 +89,59 @@ class Profile extends React.Component {
     return (
       <React.Fragment>
         {/* <Navbar /> */}
-        <br />
-        <br />
-        <br />
-        <div className="container profileContainer">
-          <div className="row">
-            <h1>My Profile</h1>
-          </div>
-          {/* Display Container Area */}
-          <div class="container-fluid card main ">
-            <div class="card-body">
-              {console.log("user:", this.state.currentUser.username)}
-              <h1>Hi {this.state.currentUser.username}!</h1>
+        <div className="jumbo5">
+          <div className="container profileContainer">
+            <div className="row">
+              <h1>My Profile</h1>
+            </div>
+            {/* Display Container Area */}
+            <div class="container-fluid card main ">
+              <div class="card-body">
+                {console.log("user:", this.state.currentUser.username)}
+                <h1>Hi {this.state.currentUser.username}!</h1>
 
-              <h4>What would you like to do today?</h4>
-              <Link
-                to="/newbook"
-                className="btn btn-secondary btn-lg btn-custom"
-              >
-                Add new books
-              </Link>
-              <br />
-              <br />
-              <p>These are your current listings:</p>
-              {/* Show all only my books */}
-
-              <div class="row">
-                {this.state.books.map((book, index) => {
-                  return this.state.currentUser._id === book.user._id ? (
-                    <div className="col-4">
-                      {/* {console.log(book)} */}
-                      <Link
-                        to={{
-                          pathname: "/showbook",
-                          state: {
-                            book: book
-                          }
-                        }}
-                      >
-                        <img
-                          src={book.image}
-                          className="img-fluid img-thumb shadow"
-                        />
-                        <h6>{book.title}</h6>
-                      </Link>
-                      <p>{book.author}</p>
-                      <Link to="/toeditbooks">Edit Listing</Link>
-                      <p onClick={() => this.deleteBook(book._id, index)}>
-                        Delete Listing
-                      </p>
-                    </div>
-                  ) : (
-                    ""
-                  );
-                })}
-              </div>
-              <div class="buttonContainer">
+                <h4>What would you like to do today?</h4>
                 <Link
                   to="/newbook"
                   className="btn btn-secondary btn-lg btn-custom"
                 >
                   Add new books
                 </Link>
+                <br />
+                <br />
+                <p>These are your current listings:</p>
+                {/* Show all only my books */}
 
-                {/* <Link
-									to="/"
-									className="btn btn-secondary btn-lg btn-custom"
-									onClick={this.props.toLogout}
-								>
-									Log Out
-								</Link> */}
-                {/* <button className="nav-item nav-link" onClick={this.props.toLogout}>
-									<Link to="/">Logout</Link>
-								</button> */}
+                <div class="row">
+                  {this.state.books.map((book, index) => {
+                    return this.state.currentUser._id === book.user._id ? (
+                      <div className="col-4">
+                        {/* {console.log(book)} */}
+                        <Link
+                          to={{
+                            pathname: "/showbook",
+                            state: {
+                              book: book
+                            }
+                          }}
+                        >
+                          <img
+                            src={book.image}
+                            className="img-fluid img-thumb shadow"
+                          />
+                          <h6>{book.title}</h6>
+                        </Link>
+                        <p>{book.author}</p>
+                        <Link to="/toeditbooks">Edit Listing</Link>
+                        <p onClick={() => this.deleteBook(book._id, index)}>
+                          Delete Listing
+                        </p>
+                      </div>
+                    ) : (
+                      ""
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

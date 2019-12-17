@@ -22,7 +22,9 @@ class Home extends React.Component {
                 share / trade / swap your old textbooks with someone who needs
                 it!
               </p>
-              <button class="btn btn-primary">Sign Up</button>
+              <Link to="/signup">
+                <button class="btn btn-primary">Sign Up</button>
+              </Link>
             </div>
           </div>
         </div>
