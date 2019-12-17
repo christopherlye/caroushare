@@ -67,7 +67,7 @@ class App extends React.Component {
 							<Newbook />
 						</Route>
 						<Route path="/showbook" component={Showbook} />
-						{/* <Route path="/toeditbooks" component={BooksEdit} /> */}
+						<Route path="/toeditbooks" component={BooksEdit} />
 						{/* <Route path="/toeditbooks">
 							<BooksEdit currentUser={this.state.currentUser} />
 						</Route> */}

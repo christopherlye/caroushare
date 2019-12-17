@@ -33,8 +33,8 @@ class BooksEdit extends React.Component {
 		fetch('/books', {
 			body    : JSON.stringify({
 				title : this.state.title,
-				author : this.state.author,
-				image  : this.state.image
+				// author : this.state.author,
+				// image  : this.state.image
 			}),
 			method  : 'POST',
 			headers : {
@@ -61,8 +61,29 @@ class BooksEdit extends React.Component {
 
 	// this.props.location.state.book._id,
 
-	//Update Book
+	  //Update Book
+	//   updateBook(book, index) {
+	// 	fetch("/books" + book._id, {
+	// 	  body: JSON.stringify(book),
+	// 	  method: "PUT",
+	// 	  headers: {
+	// 		// Accept         : 'application/json, text/plain, */*',
+	// 		"Content-Type": "application/json"
+	// 	  }
+	// 	})
+	// 	  .then(updatedBook => updatedBook.json())
+	// 	  .then(jsonedBook => {
+	// 		fetch("/books")
+	// 		  .then(response => response.json())
+	// 		  .then(books => {
+	// 			this.setState({ books: books });
+	// 		  });
+	// 	  });
+	//   }
+
+	//Update Book (working version)
 	updateBook = (event) => {
+		// console.log('testing:',this.props.location.state.book._id)
 		fetch('/books/' + this.props.location.state.book._id, {
 			body    : JSON.stringify({
 				title  : this.state.title,
@@ -81,15 +102,15 @@ class BooksEdit extends React.Component {
 					this.setState({ books: books });
 				});
 			});
-		// event.preventDefault();
-		// console.log(event.target);
+		event.preventDefault();
+		console.log(event.target);
 	};
 
 	render() {
-		console.log('check props', this.props);
-		console.log('check state', this.state);
+		// console.log('check props', this.props);
+		// console.log('check state', this.state);
 		// console.log('222', this.props.location.state.book._id);
-		console.log('check state title', this.state.title);
+		// console.log('check state title', this.state.title);
 
 		return (
 			<React.Fragment>

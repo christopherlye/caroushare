@@ -65,24 +65,24 @@ class Profile extends React.Component {
   }
 
   //Update Book
-  updateBook(book, index) {
-    fetch("/books" + book._id, {
-      body: JSON.stringify(book),
-      method: "PUT",
-      headers: {
-        // Accept         : 'application/json, text/plain, */*',
-        "Content-Type": "application/json"
-      }
-    })
-      .then(updatedBook => updatedBook.json())
-      .then(jsonedBook => {
-        fetch("/books")
-          .then(response => response.json())
-          .then(books => {
-            this.setState({ books: books });
-          });
-      });
-  }
+  // updateBook(book, index) {
+  //   fetch("/books" + book._id, {
+  //     body: JSON.stringify(book),
+  //     method: "PUT",
+  //     headers: {
+  //       // Accept         : 'application/json, text/plain, */*',
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //     .then(updatedBook => updatedBook.json())
+  //     .then(jsonedBook => {
+  //       fetch("/books")
+  //         .then(response => response.json())
+  //         .then(books => {
+  //           this.setState({ books: books });
+  //         });
+  //     });
+  // }
 
   ///////////////////////////////////Render
   render() {
@@ -143,25 +143,6 @@ class Profile extends React.Component {
                     ""
                   );
                 })}
-              </div>
-              <div class="buttonContainer">
-                <Link
-                  to="/newbook"
-                  className="btn btn-secondary btn-lg btn-custom"
-                >
-                  Add new books
-                </Link>
-
-                {/* <Link
-									to="/"
-									className="btn btn-secondary btn-lg btn-custom"
-									onClick={this.props.toLogout}
-								>
-									Log Out
-								</Link> */}
-                {/* <button className="nav-item nav-link" onClick={this.props.toLogout}>
-									<Link to="/">Logout</Link>
-								</button> */}
               </div>
             </div>
           </div>
