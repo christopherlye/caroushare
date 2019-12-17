@@ -10,6 +10,13 @@ class Newbook extends React.Component {
 		};
 	}
 
+	//Component did mount
+	componentDidMount = () => {
+		fetch('/books').then((response) => response.json()).then((books) => {
+			this.setState({ books: books });
+		});
+	};
+
 	//handle change and submit
 	handleChange = (event) => {
 		this.setState({ [event.target.id]: event.target.value });
@@ -19,7 +26,12 @@ class Newbook extends React.Component {
 		event.preventDefault();
 		console.log(this.state);
 		fetch('/books', {
-			body    : JSON.stringify({ title: this.state.title }),
+			body    : JSON.stringify({
+				title  : this.state.title,
+				author : this.state.author,
+				image  : this.state.image,
+				user   : this.state.user
+			}),
 			method  : 'POST',
 			headers : {
 				Accept         : 'application/json, text/plain, */*',
@@ -39,7 +51,6 @@ class Newbook extends React.Component {
 				console.log(books);
 			})
 			.catch((error) => console.log(error));
-		//Still shows error
 	};
 	render() {
 		return (
@@ -77,9 +88,21 @@ class Newbook extends React.Component {
 							id="image"
 						/>
 						<br />
+						{/* <label for="user" />
+						<input
+							type="text"
+							placeholder="username"
+							value={this.state.user}
+							onChange={this.handleChange}
+							id="user"
+						/>
+						<br /> */}
 						<input type="submit" value="Upload Book!" />
 					</form>
 					<br />
+					<div class="row">
+						<Link to="/profile">Back</Link>
+					</div>
 				</div>
 			</React.Fragment>
 		);

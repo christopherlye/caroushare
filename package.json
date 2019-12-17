@@ -22,11 +22,15 @@
     "bcrypt": "^3.0.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "expess": "0.0.1-security",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "mongoose": "^5.7.14",
     "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
     "react-router": "^5.1.2"
-  }
+  },
+  "keywords": [],
+  "devDependencies": {}
 }

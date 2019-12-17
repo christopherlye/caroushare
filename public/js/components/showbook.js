@@ -33,7 +33,7 @@ class Showbook extends React.Component {
             Owner:{" "}
             {this.state.book.user ? this.state.book.user.username : "No Owner"}
           </p>
-          <Link
+          {/* <Link
             to={{
               pathname: "/toeditbooks",
               state: {
@@ -49,7 +49,7 @@ class Showbook extends React.Component {
             }
           >
             X
-          </p>
+          </p> */}
         </div>
       </React.Fragment>
     );

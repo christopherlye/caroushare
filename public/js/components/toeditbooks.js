@@ -29,9 +29,13 @@ class BooksEdit extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     fetch("/books", {
-      body: JSON.stringify({ title: this.state.title }),
+      body: JSON.stringify({
+        title: this.state.title
+        // author : this.state.author,
+        // image  : this.state.image
+      }),
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -43,9 +47,11 @@ class BooksEdit extends React.Component {
       })
       .then(jsonedBook => {
         // reset the form
-        // add person to list
+        // add book to list
         this.setState({
           title: "",
+          image: "",
+          author: "",
           books: [jsonedBook, ...this.state.books]
         });
         console.log(books);
@@ -53,7 +59,29 @@ class BooksEdit extends React.Component {
       .catch(error => console.log(error));
   };
 
+  // this.props.location.state.book._id,
+
   //Update Book
+  //   updateBook(book, index) {
+  // 	fetch("/books" + book._id, {
+  // 	  body: JSON.stringify(book),
+  // 	  method: "PUT",
+  // 	  headers: {
+  // 		// Accept         : 'application/json, text/plain, */*',
+  // 		"Content-Type": "application/json"
+  // 	  }
+  // 	})
+  // 	  .then(updatedBook => updatedBook.json())
+  // 	  .then(jsonedBook => {
+  // 		fetch("/books")
+  // 		  .then(response => response.json())
+  // 		  .then(books => {
+  // 			this.setState({ books: books });
+  // 		  });
+  // 	  });
+  //   }
+
+  //Update Book (working version)
   updateBook = event => {
     fetch("/books/" + this.props.location.state.book._id, {
       body: JSON.stringify({
@@ -75,13 +103,11 @@ class BooksEdit extends React.Component {
             this.setState({ books: books });
           });
       });
-    // event.preventDefault();
-    // console.log(event.target);
+    event.preventDefault();
+    console.log(event.target);
   };
 
   render() {
-    console.log(this.props.location.state.book._id);
-    console.log(this.state);
     return (
       <React.Fragment>
         {/* <Navbar /> */}
@@ -89,32 +115,33 @@ class BooksEdit extends React.Component {
         <br />
         <div class="container">
           <br />
-          <h1>To edit book</h1>
+          <h1>Edit book listing</h1>
           <div class="row">
             <form onSubmit={this.updateBook}>
-              <label for="title" />
+              <label for="title">Title</label>
+
               <input
                 type="text"
-                placeholder="Title"
+                placeholder={this.state.title}
                 value={this.state.title}
                 onChange={this.handleChange}
                 id="title"
               />
               <br />
-              <label for="author" />
+              <label for="author">Author</label>
               <input
                 type="text"
-                placeholder="Author"
+                placeholder={this.state.author}
                 value={this.state.author}
                 onChange={this.handleChange}
                 id="author"
               />
               <br />
-              <label for="image" />
+              <label for="image">Image URL</label>
               <input
                 type="text"
-                placeholder="Image URL"
-                value={this.state.url}
+                placeholder={this.state.image}
+                value={this.state.image}
                 onChange={this.handleChange}
                 id="image"
               />
@@ -122,7 +149,9 @@ class BooksEdit extends React.Component {
               <input type="submit" value="Edit Book!" />
             </form>
           </div>
-          <div class="row"></div>
+          <div class="row">
+            <Link to="/profile">Back</Link>
+          </div>
         </div>
       </React.Fragment>
     );
