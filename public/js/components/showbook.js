@@ -4,52 +4,82 @@ class Showbook extends React.Component {
     this.state = {
       book: this.props.location.state.book,
       index: this.props.location.state.index,
-      isDeleted: false
+      isDeleted: false,
+      currentUser: this.props.currentUser
     };
   }
 
+  //Component Did Mount
+  // componentDidMount() {
+  // 	fetch('/users').then((response) => response.json()).then((users) => {
+  // 		this.setState({
+  // 			users : users
+  // 		});
+  // 	});
+  // }
+
   //Delete Book
-  deleteBook(id, index) {
-    fetch("/books/" + id, {
-      method: "DELETE"
-    }).then(() => {
-      this.props.history.push("/books");
-    });
-  }
+  // deleteBook(id, index) {
+  // 	fetch('/books/' + id, {
+  // 		method : 'DELETE'
+  // 	}).then(() => this.props.history.push('/books'));
+  // }
 
   render() {
-    console.log(this.props);
+    // console.log('testing for index', this.state.index);
+    console.log("book", this.state.book);
     return (
       <React.Fragment>
-        {/* <Navbar /> */}
         <br />
         <br />
         <br />
-        <div class="container">
-          <p>{this.state.book.title}</p>
-          <p>{this.state.book.author}</p>
-          <img src={this.state.book.image}></img>
+        <div className="container showDescription">
+          <img
+            src={this.state.book.image}
+            className="showBook img-fluid img-thumb shadow"
+          />
+          <br />
+          <h5>{this.state.book.title}</h5>
+          <p>Author: {this.state.book.author}</p>
           <p>
-            Owner:{" "}
+            Listed By:{" "}
             {this.state.book.user ? this.state.book.user.username : "No Owner"}
           </p>
-          <Link
-            to={{
-              pathname: "/toeditbooks",
-              state: {
-                book: this.state.book
+          <Link to="/books">Back</Link>
+
+          {/* To test usernames */}
+          {console.log(
+            "testing for whether loggin in or not. user:",
+            this.props.currentUser
+          )}
+          {console.log(
+            "testing for owner of book:",
+            this.state.book.user.username
+          )}
+
+          {/* {this.state.book.user.username === this.currentUser ? (
+          <div>
+            <Link
+              to={{
+                pathname: "/toeditbooks",
+                state: {
+                  book: this.state.book
+                }
+              }}
+            >
+              Edit this book!
+            </Link>
+            <p
+              onClick={() =>
+                this.deleteBook(this.state.book._id, this.state.index)
               }
-            }}
-          >
-            <p>Edit this book: {this.state.book.title}</p>
-          </Link>
-          <p
-            onClick={() =>
-              this.deleteBook(this.state.book._id, this.state.index)
-            }
-          >
-            X
-          </p>
+            >
+              X
+            </p>
+          </div>
+          ) : (
+            ""
+          )} */}
         </div>
       </React.Fragment>
     );
