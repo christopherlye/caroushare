@@ -46,6 +46,8 @@ class Newbook extends React.Component {
 				// add person to list
 				this.setState({
 					title : '',
+					author: '',
+					image: '',
 					books : [jsonedBook, ...this.state.books]
 				});
 				console.log(jsonedBook);

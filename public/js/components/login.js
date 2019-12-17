@@ -4,8 +4,7 @@ class Login extends React.Component {
     this.state = {
       username: "",
       password: "",
-	  currentUser: "",
-	  message: ""
+      currentUser: ""
     };
   }
 
@@ -28,11 +27,9 @@ class Login extends React.Component {
         return loggedInUser.json();
       })
       .then(jsonedUser => {
-		  if(jsonedUser.message === null) {
         this.setState({
           currentUser: jsonedUser
-		});
-	}
+        });
         console.log("Current User is:", this.state.currentUser);
       })
       .then(() => {
