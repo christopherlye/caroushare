@@ -142,7 +142,9 @@ class BooksEdit extends React.Component {
 								id="image"
 							/>
 							<br />
-							<input type="submit" value="Edit Book!" />
+							<input type="submit" value="Edit Book!">
+								{/* <Redirect to="/profile" /> */}
+							</input>
 						</form>
 					</div>
 					<div class="row">
