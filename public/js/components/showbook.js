@@ -45,7 +45,9 @@ class Showbook extends React.Component {
                 ? this.state.book.user.username
                 : "No Owner"}
             </p>
-            <Link to="/books">Back</Link>
+            <Link className="back-button btn btn-primary" to="/books">
+              Back
+            </Link>
             {console.log(
               "testing for whether loggin in or not. user:",
               this.props.currentUser
