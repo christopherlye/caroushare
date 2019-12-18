@@ -78,7 +78,11 @@ class Signup extends React.Component {
                 />
 
                 <br />
-                <input type="submit" value="submit" />
+                <input
+                  className="btn btn-success"
+                  type="submit"
+                  value="submit"
+                />
               </form>
             </div>
           </div>
