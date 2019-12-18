@@ -66,7 +66,7 @@ class App extends React.Component {
 							<Newbook currentUser={this.state.currentUser} />
 						</Route>
 						<Route path="/showbook" component={Showbook} />
-						<Route path="/toeditbooks" component={BooksEdit} />
+						<Route path="/toeditbooks" component={BooksEdit} currentUser={this.state.currentUser} />
 					</Switch>
 				</div>
 			</BrowserRouter>

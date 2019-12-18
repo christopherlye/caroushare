@@ -6,12 +6,18 @@ class BooksEdit extends React.Component {
 		super(props);
 		this.state = {
 			// currentUser : this.props.currentUser,
-			title  : '',
-			author : '',
-			image  : '',
-			books  : []
+			title             : '',
+			author            : '',
+			image             : '',
+			books             : [],
+			redirectToProfile : false
 		};
 	}
+
+	// //NEW REDIRECT TRY
+	// redirectToTarget = () => {
+	// 	this.props.history.push(`/target`);
+	// };
 
 	//Component did mount
 	componentDidMount = () => {
@@ -98,12 +104,21 @@ class BooksEdit extends React.Component {
 				fetch('/books').then((response) => response.json()).then((books) => {
 					this.setState({ books: books });
 				});
+			})
+			.then(() => {
+				this.setState({
+					redirectToProfile : true
+				});
 			});
 		event.preventDefault();
 		console.log(event.target);
 	};
 
 	render() {
+		if (this.state.redirectToProfile === true) {
+			return <Redirect to="/profile" />;
+		}
+
 		return (
 			<React.Fragment>
 				{/* <Navbar /> */}
@@ -142,9 +157,7 @@ class BooksEdit extends React.Component {
 								id="image"
 							/>
 							<br />
-							<input type="submit" value="Edit Book!">
-								{/* <Redirect to="/profile" /> */}
-							</input>
+							<input type="submit" value="Edit Book!" />
 						</form>
 					</div>
 					<div class="row">
