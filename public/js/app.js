@@ -52,7 +52,6 @@ class App extends React.Component {
 						<Route path="/signup">
 							<Signup currentUser={this.state.currentUser} />
 						</Route>
-
 						{/* Others */}
 						<Route path="/about">
 							<About />
@@ -64,13 +63,10 @@ class App extends React.Component {
 							<Profile currentUser={this.state.currentUser} />
 						</Route>
 						<Route path="/newbook">
-							<Newbook />
+							<Newbook currentUser={this.state.currentUser} />
 						</Route>
 						<Route path="/showbook" component={Showbook} />
-						<Route path="/toeditbooks" component={BooksEdit} />
-						{/* <Route path="/toeditbooks">
-							<BooksEdit currentUser={this.state.currentUser} />
-						</Route> */}
+						<Route path="/toeditbooks" component={BooksEdit} currentUser={this.state.currentUser} />
 					</Switch>
 				</div>
 			</BrowserRouter>

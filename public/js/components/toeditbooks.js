@@ -2,39 +2,43 @@
 // Currently, it's editing all the products
 
 class BooksEdit extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // currentUser : this.props.currentUser,
-      title: "",
-      author: "",
-      image: "",
-      books: []
-    };
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			// currentUser : this.props.currentUser,
+			title             : '',
+			author            : '',
+			image             : '',
+			books             : [],
+			redirectToProfile : false
+		};
+	}
 
-  //Component did mount
-  componentDidMount = () => {
-    fetch("/books")
-      .then(response => response.json())
-      .then(books => {
-        this.setState({ books: books });
-      });
-  };
+	// //NEW REDIRECT TRY
+	// redirectToTarget = () => {
+	// 	this.props.history.push(`/target`);
+	// };
 
-  //handle change and submit
-  handleChange = event => {
-    this.setState({ [event.target.id]: event.target.value });
-  };
+	//Component did mount
+	componentDidMount = () => {
+		fetch('/books').then((response) => response.json()).then((books) => {
+			this.setState({ books: books });
+		});
+	};
+
+	//handle change and submit
+	handleChange = (event) => {
+		this.setState({ [event.target.id]: event.target.value });
+	};
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		// console.log(this.state);
+		console.log(this.state);
 		fetch('/books', {
 			body    : JSON.stringify({
-				title : this.state.title,
-				// author : this.state.author,
-				// image  : this.state.image
+				title  : this.state.title,
+				author : this.state.author,
+				image  : this.state.image
 			}),
 			method  : 'POST',
 			headers : {
@@ -49,10 +53,10 @@ class BooksEdit extends React.Component {
 				// reset the form
 				// add book to list
 				this.setState({
-					title : '',
+					title  : '',
 					image  : '',
 					author : '',
-					books : [jsonedBook, ...this.state.books]
+					books  : [jsonedBook, ...this.state.books]
 				});
 				console.log(books);
 			})
@@ -61,7 +65,7 @@ class BooksEdit extends React.Component {
 
 	// this.props.location.state.book._id,
 
-	  //Update Book
+	//Update Book
 	//   updateBook(book, index) {
 	// 	fetch("/books" + book._id, {
 	// 	  body: JSON.stringify(book),
@@ -83,7 +87,6 @@ class BooksEdit extends React.Component {
 
 	//Update Book (working version)
 	updateBook = (event) => {
-		// console.log('testing:',this.props.location.state.book._id)
 		fetch('/books/' + this.props.location.state.book._id, {
 			body    : JSON.stringify({
 				title  : this.state.title,
@@ -101,16 +104,20 @@ class BooksEdit extends React.Component {
 				fetch('/books').then((response) => response.json()).then((books) => {
 					this.setState({ books: books });
 				});
+			})
+			.then(() => {
+				this.setState({
+					redirectToProfile : true
+				});
 			});
 		event.preventDefault();
 		console.log(event.target);
 	};
 
 	render() {
-		// console.log('check props', this.props);
-		// console.log('check state', this.state);
-		// console.log('222', this.props.location.state.book._id);
-		// console.log('check state title', this.state.title);
+		if (this.state.redirectToProfile === true) {
+			return <Redirect to="/profile" />;
+		}
 
 		return (
 			<React.Fragment>

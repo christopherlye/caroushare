@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
 	Books.create(req.body, (err, createdBook) => {
 		res.json(createdBook); //.json() will send proper headers in response so client knows it's json coming back
-		// res.redirect(303, '/profile');
+		// res.redirect(303, '/');
 	});
 });
 
@@ -31,6 +31,8 @@ router.put('/:id', (req, res) => {
 	console.log(req.body);
 	Books.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedBook) => {
 		res.json(updatedBook);
+		//   console.log(updatedBook);
+		// res.redirect(303, '/profile');
 	});
 });
 
