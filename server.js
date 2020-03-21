@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3005;
 const db = mongoose.connection;
 
 // Environment Variables
-const mongoURI = "localhost:27017"; // process.env.MONGODB_URI;
+const mongoURI = "mongodb://localhost:27017"; // process.env.MONGODB_URI;
 
 // Connect to Mongo
 mongoose.connect(
