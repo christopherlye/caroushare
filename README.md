@@ -1,7 +1,7 @@
 <h1 align="center">Caroushare ©</h1>
 <p align="center">Caroushare © : Book sharing app built using ReactJS, credits to the Facebook 2.0 team</p>
 <br>
-<p align="center"><img src="" alt="Caroushare ©" width="100%"></p>
+<p align="center"><a href="http://caroushare-app.herokuapp.com/"><img src="https://github.com/christopherlye/caroushare/blob/master/public/img/caroushare%20banner.jpg" alt="Caroushare ©" width="100%"></a></p>
 
 ---
 
