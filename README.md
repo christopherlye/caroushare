@@ -9,11 +9,11 @@
 
 > Save money, share textbook la! A platform for you to trade, share, give your textbooks away.
 
-<p align="justify">Together with my two other friends, Zachary and Shah, we brainstormed ideas for our project built on ReactJS. We wanted to work on a project with a social objective as we felt that it would be more meaningful than just creating something for ourselves.</p>
+<p align="justify">I wanted to work on a project with two like-minded friends, Zachary and Shah, to create something that has a social purpose. We felt it would be more meaningful than creating something for ourselves.</p>
 
-<p align="justify">Working together on this project gave us a new dimension to coding as we had to distribute the work among each other, practice creating branches and merging our commits eventually to the master branch.</p>
+<p align="justify">We built our project on ReactJS after settling on this idea. We focused on building a working prototype of what we wanted the basic version to look like, priming it for more features to be added in the near future.</p>
 
-<p align="justify">Even though the project is still a far cry from what we had intended it to be, it was a working prototype of what the actual project could look like eventually with more features added later on. Kudos to the team! ✌️</p>
+<p align="justify">Working together on this project gave us a new dimension to coding as we had to distribute the work among ourselves, practice creating branches and eventually merging our commits to the master branch. Kudos to the team! :v:</p>
 
 ---
 
